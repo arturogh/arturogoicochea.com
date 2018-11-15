@@ -5,6 +5,7 @@ exports.createPages = ({graphql, actions}) => {
 
   return new Promise((resolve, reject) => {
     const postTemplate = path.resolve('src/templates/posts.js');
+    const projectTemplate = path.resolve('src/templates/projects.js');
 
     resolve(
       graphql(`
@@ -14,24 +15,45 @@ exports.createPages = ({graphql, actions}) => {
               node {
                 frontmatter {
                   path
+                  type
                 }
               }
             }
           }
         }
       `).then(result => {
-        const posts = result.data.allMarkdownRemark.edges;
+        const posts = result.data.allMarkdownRemark.edges.filter(
+          post => post.node.frontmatter.type === 'post'
+        );
 
         posts.forEach(({node}, index) => {
-          const path = `/posts${node.frontmatter.path}`;
+          const path = node.frontmatter.path;
           createPage({
             path,
             component: postTemplate,
             context: {
               pathSlug: path,
-              cleanPath: node.frontmatter.path,
               prev: index === 0 ? null : posts[index - 1].node,
               next: index === posts.length - 1 ? null : posts[index + 1].node
+            }
+          });
+
+          resolve();
+        });
+
+        const projects = result.data.allMarkdownRemark.edges.filter(
+          project => project.node.frontmatter.type === 'project'
+        );
+
+        projects.forEach(({node}, index) => {
+          const path = node.frontmatter.path;
+          createPage({
+            path,
+            component: projectTemplate,
+            context: {
+              pathSlug: path,
+              prev: index === 0 ? null : projects[index - 1].node,
+              next: index === projects.length - 1 ? null : projects[index + 1].node
             }
           });
 

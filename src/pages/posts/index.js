@@ -10,7 +10,7 @@ const Posts = ({data}) => {
       {edges.map(edge => {
         const {frontmatter} = edge.node;
         return (
-          <Link key={frontmatter.path} to={`posts${frontmatter.path}`}>
+          <Link key={frontmatter.path} to={frontmatter.path}>
             <div key={frontmatter.path}>{frontmatter.title}</div>
           </Link>
         );
@@ -20,8 +20,11 @@ const Posts = ({data}) => {
 };
 
 export const query = graphql`
-  query HomePageQuery {
-    allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
+  query {
+    allMarkdownRemark(
+      sort: {order: DESC, fields: [frontmatter___date]}
+      filter: {frontmatter: {type: {eq: "post"}}}
+    ) {
       edges {
         node {
           frontmatter {

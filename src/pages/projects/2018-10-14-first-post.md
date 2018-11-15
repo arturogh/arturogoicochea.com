@@ -1,7 +1,8 @@
 ---
-path: '/first-post'
+path: '/first-project'
 date: '2018-10-14'
-title: 'My First Post'
+title: 'My First Project'
+type: 'project'
 tags: ['this', 'that']
 excerpt: 'A preview of my first post'
 ---

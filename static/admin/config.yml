@@ -10,7 +10,7 @@ public_folder: assets/images
 collections:
   - name: 'posts'
     label: 'Posts'
-    folder: 'src/pages/posts/2018-11-14-second-post'
+    folder: 'src/pages/posts/'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
@@ -22,7 +22,7 @@ collections:
       - {label: 'Tags', name: 'tags', widget: 'list'}
   - name: 'projects'
     label: 'Projects'
-    folder: 'src/pages/projects/2018-11-14-second-post'
+    folder: 'src/pages/projects/'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
