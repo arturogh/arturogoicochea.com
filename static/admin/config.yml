@@ -2,16 +2,21 @@ backend:
   name: github
   repo: arturogh/arturogoicochea.com
 
-media_folder: static/assets
+publish_mode: editorial_workflow
+
+media_folder: static/assets/images
 public_folder: assets
 
 collections:
-  - name: blog
-    label: Blog
-    folder: blog
+  - name: posts
+    label: Posts
+    folder: posts
     create: true
+    slug: {{year}}-{{month}}-{{day}}-{{slug}}
     fields:
       - {name: path, label: Path}
       - {name: date, label: Date, widget: date}
       - {name: title, label: Title}
+      - {name: excerpt, label: Excerpt}
       - {name: body, label: Body, widget: markdown}
+      - {name: tags, label: Tags}
