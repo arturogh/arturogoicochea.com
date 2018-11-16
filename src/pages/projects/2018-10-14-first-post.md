@@ -1,10 +1,10 @@
 ---
-path: '/first-project'
+path: /first-project
 date: '2018-10-14'
-title: 'My First Project'
-type: 'project'
-tags: ['this', 'that']
-excerpt: 'A preview of my first post'
+title: My (new) First Project
+excerpt: A preview of my first project
+tags:
+  - this
+  - that
 ---
-
-Post 1!!! is here!
+This is my new fist project.
