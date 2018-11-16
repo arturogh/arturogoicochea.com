@@ -2,8 +2,6 @@ backend:
   name: github
   repo: arturogh/arturogoicochea.com
 
-publish_mode: editorial_workflow
-
 media_folder: static/assets/images
 public_folder: assets/images
 
