@@ -1,12 +1,11 @@
 import React from 'react';
-import {Header} from './../../components/Header';
+import {Wrapper} from './../../components/Wrapper';
 
 const About = () => {
   return (
-    <>
-      <Header />
+    <Wrapper>
       <h1>My about page</h1>
-    </>
+    </Wrapper>
   );
 };
 

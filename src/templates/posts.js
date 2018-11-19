@@ -1,5 +1,5 @@
 import React from 'react';
-import {Header} from './../components/Header';
+import {Wrapper} from './../components/Wrapper';
 import {graphql, Link} from 'gatsby';
 
 const Template = ({data, pageContext}) => {
@@ -8,14 +8,13 @@ const Template = ({data, pageContext}) => {
   const title = markdownRemark.frontmatter.title;
   const html = markdownRemark.html;
   return (
-    <>
-      <Header />
+    <Wrapper>
       <h1>{title}</h1>
       <div dangerouslySetInnerHTML={{__html: html}} />
 
       {prev && <Link to={prev.frontmatter.path}>Previous post</Link>}
       {next && <Link to={next.frontmatter.path}>Next post</Link>}
-    </>
+    </Wrapper>
   );
 };
 

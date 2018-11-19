@@ -1,6 +1,8 @@
 import React from 'react';
 import {StaticQuery, graphql, Link} from 'gatsby';
 import {Nav} from './Nav';
+import 'typeface-crimson-text';
+import 'inter-ui';
 
 const TitleAndDescription = ({data}) => {
   const title = data.site.siteMetadata.title;

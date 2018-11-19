@@ -1,12 +1,11 @@
 import React from 'react';
-import {Header} from '../../components/Header';
 import {graphql, Link} from 'gatsby';
+import {Wrapper} from './../../components/Wrapper';
 
 const Posts = ({data}) => {
   const {edges} = data.allMarkdownRemark;
   return (
-    <div>
-      <Header />
+    <Wrapper>
       {edges.map(edge => {
         const {frontmatter} = edge.node;
         return (
@@ -15,7 +14,7 @@ const Posts = ({data}) => {
           </Link>
         );
       })}
-    </div>
+    </Wrapper>
   );
 };
 
