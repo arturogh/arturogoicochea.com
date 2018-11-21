@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Wrapper, Title, Tags} from './../components';
+import {Wrapper, Title} from './../components';
 import {graphql, Link} from 'gatsby';
 import Img from 'gatsby-image';
 import {Spacing, maxWidth} from '../utils';
