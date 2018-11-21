@@ -1,6 +1,6 @@
 export const FontSize = {
-  Xxl: '6rem',
-  Xl: '5rem',
+  Xxl: '4.5rem',
+  Xl: '3.25rem',
   L: '3rem',
   M: '2.25rem',
   S: '1.5rem',

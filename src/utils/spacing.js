@@ -7,3 +7,5 @@ export const Spacing = {
   S: '.5rem',
   Xs: '.25rem'
 };
+
+export const maxWidth = '600px';
