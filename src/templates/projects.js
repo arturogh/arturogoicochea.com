@@ -39,7 +39,7 @@ const StyledProjectImage = styled.div`
 `;
 
 export const query = graphql`
-  query($path: String!) {
+  query($path: String!, $image: String!) {
     markdownRemark(frontmatter: {path: {eq: $path}}) {
       html
       frontmatter {
@@ -48,7 +48,7 @@ export const query = graphql`
       }
     }
 
-    file(relativePath: {eq: "square.jpg"}) {
+    file(relativePath: {eq: $image}) {
       childImageSharp {
         fluid {
           base64

@@ -5,6 +5,7 @@ title: 'My Second Project'
 type: 'project'
 tags: ['this', 'that']
 excerpt: 'A preview of my second post'
+featuredImage: 'square.jpg'
 ---
 
 Post 2

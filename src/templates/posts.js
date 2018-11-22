@@ -26,7 +26,7 @@ const Template = ({data, pageContext}) => {
 };
 
 export const query = graphql`
-  query($path: String!) {
+  query($path: String!, $image: String!) {
     markdownRemark(frontmatter: {path: {eq: $path}}) {
       html
       frontmatter {
@@ -35,7 +35,7 @@ export const query = graphql`
       }
     }
 
-    file(relativePath: {eq: "wide.jpg"}) {
+    file(relativePath: {eq: $image}) {
       childImageSharp {
         fluid {
           base64

@@ -16,6 +16,7 @@ exports.createPages = ({graphql, actions}) => {
                 frontmatter {
                   path
                   type
+                  featuredImage
                 }
               }
             }
@@ -32,7 +33,7 @@ exports.createPages = ({graphql, actions}) => {
             path,
             component: postTemplate,
             context: {
-              pathSlug: path,
+              image: node.frontmatter.featuredImage,
               prev: index === 0 ? null : posts[index - 1].node,
               next: index === posts.length - 1 ? null : posts[index + 1].node
             }
@@ -51,7 +52,7 @@ exports.createPages = ({graphql, actions}) => {
             path,
             component: projectTemplate,
             context: {
-              pathSlug: path,
+              image: node.frontmatter.featuredImage,
               prev: index === 0 ? null : projects[index - 1].node,
               next: index === projects.length - 1 ? null : projects[index + 1].node
             }
