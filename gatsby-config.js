@@ -4,7 +4,20 @@ module.exports = {
     description: 'Arturo is a designer who codes. Finde my projects, posts, about here.'
   },
   plugins: [
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 680,
+              showCaptions: true
+            }
+          }
+        ]
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-netlify-cms`,

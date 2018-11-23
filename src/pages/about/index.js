@@ -1,4 +1,5 @@
 import React from 'react';
+import {graphql} from 'gatsby';
 import {Wrapper} from './../../components/Wrapper';
 import Img from 'gatsby-image';
 import {TextStyle} from '../../components/TextStyle';
@@ -46,8 +47,6 @@ export const query = graphql`
     file(relativePath: {eq: "about.jpg"}) {
       childImageSharp {
         fluid {
-          base64
-          tracedSVG
           aspectRatio
           src
           srcSet
