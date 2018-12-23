@@ -1,10 +1,13 @@
 import React from 'react';
 import {Wrapper} from './../components/Wrapper';
+import {TextStyle} from '../components';
 
 const Home = () => {
   return (
     <Wrapper>
-      <h1>Hello</h1>
+      <TextStyle>
+        <h1>Hello</h1>
+      </TextStyle>
     </Wrapper>
   );
 };

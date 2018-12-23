@@ -30,12 +30,12 @@ const Template = ({data, pageContext}) => {
 };
 
 const StyledProjectImage = styled.div`
-  padding-left: ${Spacing.Xl};
+  /* padding-left: ${Spacing.Xl};
   padding-right: ${Spacing.Xl};
   @media (max-width: ${maxWidth}) {
     padding-left: 0;
     padding-right: 0;
-  }
+  } */
 `;
 
 export const query = graphql`
@@ -51,6 +51,8 @@ export const query = graphql`
     file(relativePath: {eq: $image}) {
       childImageSharp {
         fluid {
+          base64
+          tracedSVG
           aspectRatio
           src
           srcSet

@@ -2,7 +2,8 @@ const Black = {
   nearBlack: '#111111',
   darkGray: '#333333',
   midGray: '#555555',
-  gray: '#777777'
+  gray: '#777777',
+  moonGray: '#cccccc'
 };
 
 const White = {

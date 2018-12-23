@@ -13,7 +13,7 @@ export const Title = ({title, type, tags}) => {
 };
 
 const StyledContainer = styled.div`
-  margin-bottom: ${Spacing.L};
+  margin-bottom: ${Spacing.M};
 
   @media (max-width: ${maxWidth}) {
     margin-bottom: ${Spacing.S};
@@ -22,8 +22,9 @@ const StyledContainer = styled.div`
 
 const StyledTitle = styled.h1`
   font-size: ${FontSize.Xl};
+  font-weight: bold;
   color: ${Colors.Black.nearBlack};
-  margin-bottom: ${Spacing.S};
+  margin-bottom: ${Spacing.M};
 
   @media (max-width: ${maxWidth}) {
     font-size: ${FontSize.M};

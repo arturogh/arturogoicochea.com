@@ -1,22 +1,52 @@
 import React from 'react';
+import styled from 'styled-components';
 import {graphql, Link} from 'gatsby';
-import {Wrapper} from './../../components/Wrapper';
+import {
+  Wrapper,
+  LinkCollection,
+  CollectionHeading,
+  LoadInWrapper,
+  CollectionItemTitle,
+  CollectionExcerpt
+} from './../../components';
+import {Spacing} from '../../utils';
+import Img from 'gatsby-image';
 
 const Posts = ({data}) => {
   const {edges} = data.allMarkdownRemark;
   return (
     <Wrapper>
-      {edges.map(edge => {
-        const {frontmatter} = edge.node;
-        return (
-          <Link key={frontmatter.path} to={frontmatter.path}>
-            <div key={frontmatter.path}>{frontmatter.title}</div>
-          </Link>
-        );
-      })}
+      <CollectionHeading heading="Posts" />
+      <LinkCollection>
+        {edges.map(edge => {
+          const {frontmatter} = edge.node;
+          return (
+            <Post>
+              <LoadInWrapper>
+                <Link key={frontmatter.path} to={frontmatter.path}>
+                  <Img fluid={frontmatter.hero.childImageSharp.fluid} />
+                  <CollectionItemTitle key={frontmatter.path}>
+                    {frontmatter.title}
+                  </CollectionItemTitle>
+                </Link>
+                <CollectionExcerpt>{frontmatter.excerpt}</CollectionExcerpt>
+              </LoadInWrapper>
+            </Post>
+          );
+        })}
+      </LinkCollection>
     </Wrapper>
   );
 };
+
+const Post = styled.div`
+  margin-bottom: ${Spacing.Xl};
+
+  .gatsby-image-wrapper {
+    width: 60%;
+    margin-bottom: ${Spacing.S};
+  }
+`;
 
 export const query = graphql`
   query {
@@ -30,6 +60,21 @@ export const query = graphql`
             title
             path
             date
+            excerpt
+            hero {
+              childImageSharp {
+                fluid {
+                  aspectRatio
+                  src
+                  srcSet
+                  srcWebp
+                  srcSetWebp
+                  sizes
+                  originalImg
+                  originalName
+                }
+              }
+            }
           }
         }
       }

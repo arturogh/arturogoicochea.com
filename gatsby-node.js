@@ -48,6 +48,7 @@ exports.createPages = ({graphql, actions}) => {
 
         projects.forEach(({node}, index) => {
           const path = node.frontmatter.path;
+          console.log(path);
           createPage({
             path,
             component: projectTemplate,

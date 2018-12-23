@@ -2,12 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import {Nav} from './Nav';
 import {Spacing, FontSize, maxWidth} from './../utils';
+import {Footer} from './Footer';
 
 export const Wrapper = props => {
   return (
     <StyledWrapper>
       <Nav />
       {props.children}
+      <Footer />
     </StyledWrapper>
   );
 };

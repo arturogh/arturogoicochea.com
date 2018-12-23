@@ -34,6 +34,10 @@ const StyledNav = styled.div`
   align-items: center;
   padding: ${Spacing.Xl} 0;
 
+  &:hover {
+    padding: ${Spacing.Xl} 0;
+  }
+
   @media (max-width: ${maxWidth}) {
     flex-direction: column;
     align-items: flex-start;
@@ -57,10 +61,6 @@ const StyledNav = styled.div`
     color: ${titleHoverColor};
   }
 
-  &:hover h2 + ul li:first-of-type {
-    color: red;
-  }
-
   li {
     color: ${menuColor};
 
@@ -81,6 +81,7 @@ const StyledNav = styled.div`
 
 const SiteTitle = styled.h2`
   margin-bottom: 0;
+  /* font-size: ${FontSize.M}; */
   font-size: ${FontSize.S};
   font-weight: 800;
 
@@ -89,7 +90,7 @@ const SiteTitle = styled.h2`
   }
 `;
 
-const StyledLinks = styled.ul`
+export const StyledLinks = styled.ul`
   display: flex;
   flex-wrap: wrap;
   font-family: 'Inter UI';
@@ -102,6 +103,10 @@ const StyledLinks = styled.ul`
   li {
     padding-left: ${Spacing.M};
     margin-bottom: 0;
+
+    &:first-of-type {
+      padding-left: 0;
+    }
 
     @media (max-width: ${maxWidth}) {
       flex-basis: 50%;
@@ -120,8 +125,8 @@ const StyledLinks = styled.ul`
   }
 `;
 
-const navLinks = [
-  {url: '/', text: 'Hello'},
+export const navLinks = [
+  // {url: '/', text: 'Hello'},
   {url: '/projects', text: 'Projects'},
   {url: '/posts', text: 'Posts'},
   {url: '/about', text: 'About'}

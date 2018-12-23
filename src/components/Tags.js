@@ -18,6 +18,11 @@ const StyledTags = styled.ul`
   list-style: none;
   margin: 0;
 
+  li:first-of-type {
+    font-weight: 600;
+    color: ${Colors.Black.midGray};
+  }
+
   li:first-of-type:after {
     content: ' / ';
   }
