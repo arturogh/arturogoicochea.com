@@ -17,7 +17,7 @@ const StyledContent = styled.div`
   }
 
   h3 {
-    margin: ${Spacing.L} 0 ${Spacing.S};
+    margin: ${Spacing.L} 0 ${Spacing.M};
     padding: 0;
   }
 
