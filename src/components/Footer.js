@@ -54,7 +54,7 @@ const StyledFooterLinks = styled(StyledLinks)`
   justify-content: space-between;
   align-items: center;
   li a {
-    font-size: ${FontSize.Xs};
+    font-size: ${FontSize.Xxs};
     font-weight: 400;
 
     &:hover {
