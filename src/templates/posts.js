@@ -20,8 +20,8 @@ const Template = ({data, pageContext}) => {
           <div dangerouslySetInnerHTML={{__html: html}} />
         </TextStyle>
 
-        {prev && <Link to={prev.frontmatter.path}>Previous post</Link>}
-        {next && <Link to={next.frontmatter.path}>Next post</Link>}
+        {/* {prev && <Link to={prev.frontmatter.path}>Previous post</Link>}
+        {next && <Link to={next.frontmatter.path}>Next post</Link>} */}
       </LoadInWrapper>
     </Wrapper>
   );

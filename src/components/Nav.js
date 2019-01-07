@@ -1,15 +1,15 @@
 import React from 'react';
 import {Link} from 'gatsby';
 import styled from 'styled-components';
-import {Colors, Spacing, FontSize, maxWidth} from './../utils';
+import {Colors, ModScale, maxWidth} from './../utils';
 
 export const Nav = () => {
   return (
     <StyledNav>
-      <Link to="/">
-        <SiteTitle>Arturo</SiteTitle>
+      <Link to="/" activeStyle={{color: Colors.Black.midGray}}>
+        <SiteTitle>Arturo Goicochea</SiteTitle>
       </Link>
-      <StyledLinks>
+      {/* <StyledLinks>
         {navLinks.map((link, index) => (
           <li key={index}>
             <Link to={link.url} activeStyle={{color: Colors.Blue.blue}}>
@@ -17,13 +17,14 @@ export const Nav = () => {
             </Link>
           </li>
         ))}
-      </StyledLinks>
+      </StyledLinks> */}
     </StyledNav>
   );
 };
 
 const titleColor = Colors.Black.midGray;
 const titleHoverColor = Colors.Black.nearBlack;
+const titleMobileColor = Colors.Black.darkGray;
 
 const menuColor = Colors.Black.gray;
 const menuHoverColor = Colors.Black.darkGray;
@@ -32,19 +33,18 @@ const StyledNav = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: ${Spacing.Xl} 0;
-
-  &:hover {
-    padding: ${Spacing.Xl} 0;
-  }
+  margin: ${ModScale.L} 0 ${ModScale.Xl};
 
   @media (max-width: ${maxWidth}) {
-    flex-direction: column;
     align-items: flex-start;
-    padding: ${Spacing.M} 0 ${Spacing.L};
+    margin: ${ModScale.M} 0 ${ModScale.MPlus};
   }
 
-  h2,
+  a {
+    color: ${Colors.Blue.Blue};
+  }
+
+  /* h2,
   li {
     transition: color 100ms ease-in;
   }
@@ -53,7 +53,7 @@ const StyledNav = styled.div`
     color: ${titleColor};
 
     @media (max-width: ${maxWidth}) {
-      color: ${titleHoverColor};
+      color: ${titleMobileColor};
     }
   }
 
@@ -65,28 +65,28 @@ const StyledNav = styled.div`
     color: ${menuColor};
 
     @media (max-width: ${maxWidth}) {
-      color: ${menuHoverColor};
+      color: ${titleMobileColor};
     }
   }
 
   &:hover li {
     color: ${menuHoverColor};
-  }
+  } */
 
   a {
-    color: inherit;
+    color: ${Colors.Blue.blue};
     text-decoration: none;
   }
 `;
 
 const SiteTitle = styled.h2`
   margin-bottom: 0;
-  /* font-size: ${FontSize.M}; */
-  font-size: ${FontSize.S};
-  font-weight: 800;
+  font-size: ${ModScale.MPlus};
+  font-weight: 600;
+  color: inherit;
 
   @media (max-width: ${maxWidth}) {
-    padding-bottom: ${Spacing.S};
+    padding-bottom: ${ModScale.S};
   }
 `;
 
@@ -98,10 +98,11 @@ export const StyledLinks = styled.ul`
   margin: 0;
   font-weight: 500;
   color: ${Colors.Black.midGray};
-  font-size: ${FontSize.Xs};
+  font-size: ${ModScale.S};
+  font-weight: 300;
 
   li {
-    padding-left: ${Spacing.M};
+    padding-left: ${ModScale.M};
     margin-bottom: 0;
 
     &:first-of-type {
@@ -109,9 +110,7 @@ export const StyledLinks = styled.ul`
     }
 
     @media (max-width: ${maxWidth}) {
-      flex-basis: 50%;
-      padding-left: 0;
-      font-size: ${FontSize.Xxs};
+      font-size: ${ModScale.Xxs};
     }
 
     &:hover {
@@ -127,7 +126,6 @@ export const StyledLinks = styled.ul`
 
 export const navLinks = [
   // {url: '/', text: 'Hello'},
-  {url: '/projects', text: 'Projects'},
-  {url: '/posts', text: 'Posts'},
+  {url: '/', text: 'Posts'},
   {url: '/about', text: 'About'}
 ];

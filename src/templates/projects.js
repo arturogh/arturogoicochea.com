@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import {Wrapper, Title} from './../components';
 import {graphql, Link} from 'gatsby';
 import Img from 'gatsby-image';
-import {Spacing, maxWidth} from '../utils';
 import {TextStyle} from '../components/TextStyle';
 
 const Template = ({data, pageContext}) => {
@@ -29,14 +28,7 @@ const Template = ({data, pageContext}) => {
   );
 };
 
-const StyledProjectImage = styled.div`
-  /* padding-left: ${Spacing.Xl};
-  padding-right: ${Spacing.Xl};
-  @media (max-width: ${maxWidth}) {
-    padding-left: 0;
-    padding-right: 0;
-  } */
-`;
+const StyledProjectImage = styled.div``;
 
 export const query = graphql`
   query($path: String!, $image: String!) {

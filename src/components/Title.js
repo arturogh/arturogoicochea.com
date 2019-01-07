@@ -1,32 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Tags} from './../components';
-import {FontSize, Colors, maxWidth, Spacing} from '../utils';
+// import {Tags} from './../components';
+import {ModScale, Colors, maxWidth} from '../utils';
 
 export const Title = ({title, type, tags}) => {
   return (
     <StyledContainer>
       <StyledTitle>{title}</StyledTitle>
-      <Tags type={type} tags={tags} />
+      {/* No tags for now */}
+      {/* <Tags type={type} tags={tags} /> */}
     </StyledContainer>
   );
 };
 
 const StyledContainer = styled.div`
-  margin-bottom: ${Spacing.M};
+  margin-bottom: ${ModScale.M};
 
   @media (max-width: ${maxWidth}) {
-    margin-bottom: ${Spacing.S};
+    margin-bottom: ${ModScale.S};
   }
 `;
 
 const StyledTitle = styled.h1`
-  font-size: ${FontSize.Xl};
-  font-weight: bold;
+  font-size: ${ModScale.L};
+  font-weight: 800;
   color: ${Colors.Black.nearBlack};
-  margin-bottom: ${Spacing.M};
+  margin-bottom: ${ModScale.M};
 
   @media (max-width: ${maxWidth}) {
-    font-size: ${FontSize.M};
+    font-size: ${ModScale.MPlus};
   }
 `;

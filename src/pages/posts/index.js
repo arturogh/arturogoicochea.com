@@ -4,19 +4,17 @@ import {graphql, Link} from 'gatsby';
 import {
   Wrapper,
   LinkCollection,
-  CollectionHeading,
   LoadInWrapper,
   CollectionItemTitle,
   CollectionExcerpt
 } from './../../components';
-import {Spacing} from '../../utils';
+import {ModScale} from '../../utils';
 import Img from 'gatsby-image';
 
 const Posts = ({data}) => {
   const {edges} = data.allMarkdownRemark;
   return (
     <Wrapper>
-      <CollectionHeading heading="Posts" />
       <LinkCollection>
         {edges.map(edge => {
           const {frontmatter} = edge.node;
@@ -40,11 +38,11 @@ const Posts = ({data}) => {
 };
 
 const Post = styled.div`
-  margin-bottom: ${Spacing.Xl};
+  margin-bottom: ${ModScale.Xl};
 
   .gatsby-image-wrapper {
     width: 60%;
-    margin-bottom: ${Spacing.S};
+    margin-bottom: ${ModScale.S};
   }
 `;
 

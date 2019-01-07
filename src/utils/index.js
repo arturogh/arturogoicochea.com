@@ -1,3 +1,3 @@
-export {Spacing, maxWidth} from './spacing';
+export {maxWidth} from './spacing';
 export {Colors} from './colors';
-export {FontSize} from './fontSize.js';
+export {ModScale} from './modScale.js';

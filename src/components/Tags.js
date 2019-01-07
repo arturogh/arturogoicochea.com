@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Spacing, Colors, FontSize} from '../utils';
+import {Colors, ModScale} from '../utils';
 
 export const Tags = ({tags, type}) => {
   return (
@@ -38,7 +38,7 @@ const Tag = ({tag}) => {
 };
 
 const StyledTag = styled.li`
-  padding-right: ${Spacing.Xs};
-  font-size: ${FontSize.Xxs};
+  padding-right: ${ModScale.Xs};
+  font-size: ${ModScale.Xxs};
   font-family: 'Inter UI', sans-serif;
 `;

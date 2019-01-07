@@ -9,7 +9,7 @@ import {
   CollectionItemTitle,
   CollectionExcerpt
 } from '../../components';
-import {Spacing} from '../../utils';
+import {ModScale} from '../../utils';
 
 const Projects = ({data}) => {
   const {edges} = data.allMarkdownRemark;
@@ -37,17 +37,17 @@ const Projects = ({data}) => {
 };
 
 const Project = styled.div`
-  margin-bottom: ${Spacing.Xl};
+  margin-bottom: ${ModScale.Xl};
 
   .gatsby-image-wrapper {
     padding-top: 66.67%;
     height: 0;
-    margin-bottom: ${Spacing.S};
+    margin-bottom: ${ModScale.S};
   }
 
   /* Overriding padding bottom in CollectionItemTitle */
   a h3 {
-    padding-bottom: ${Spacing.M};
+    padding-bottom: ${ModScale.M};
   }
 `;
 

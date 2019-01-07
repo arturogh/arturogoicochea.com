@@ -1,12 +1,17 @@
 import styled from 'styled-components';
-import {FontSize, Spacing, Colors} from './../utils';
+import {ModScale, Colors, maxWidth} from './../utils';
 
 export const CollectionItemTitle = styled.h3`
-  font-size: ${FontSize.M};
-  padding-bottom: ${Spacing.Xs};
+  font-size: ${ModScale.MPlus};
+  font-weight: 800;
+  padding-bottom: ${ModScale.Xs};
   margin-bottom: 0;
   color: ${Colors.Black.darkGray};
-  line-height: 1.4;
+  line-height: 1;
+
+  @media (max-width: ${maxWidth}) {
+    font-size: ${ModScale.M};
+  }
 
   &:hover {
     color: ${Colors.Blue.blue};

@@ -1,29 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
-import {FontSize, Colors, Spacing} from '../utils';
+import {ModScale, Colors} from '../utils';
 
 export const TextStyle = ({children}) => {
   return <StyledContent>{children}</StyledContent>;
 };
 
 const StyledContent = styled.div`
-  font-size: ${FontSize.S};
+  font-size: ${ModScale.S};
   color: ${Colors.Black.darkGray};
-  margin-bottom: ${Spacing.Xxl};
+  margin-bottom: ${ModScale.Xxl};
 
   h2 {
-    margin: ${Spacing.Xl} 0 ${Spacing.L};
+    margin: ${ModScale.S} 0 ${ModScale.S};
     padding: 0;
   }
 
   h3 {
-    margin: ${Spacing.L} 0 ${Spacing.M};
+    margin: ${ModScale.L} 0 ${ModScale.M};
     padding: 0;
   }
 
   p {
-    margin: 0 0 ${Spacing.L};
-    padding: 0 0 ${Spacing.S};
+    padding: 0 0 ${ModScale.S};
+    margin: 0;
   }
 
   a {
@@ -37,20 +37,20 @@ const StyledContent = styled.div`
 
   figcaption {
     color: ${Colors.Black.midGray};
-    font-size: ${FontSize.Xxs};
-    padding: ${Spacing.Xs} 0;
+    font-size: ${ModScale.Xs};
+    padding: ${ModScale.Xs} 0;
     font-family: 'Inter UI';
   }
 
   blockquote {
     color: ${Colors.Black.midGray};
-    font-size: ${FontSize.Xs};
+    font-size: ${ModScale.S};
     line-height: 1.6;
 
-    margin: ${Spacing.L} 0;
+    margin: ${ModScale.Xs} 0 calc(${ModScale.Xs} + ${ModScale.Xs});
 
-    border-left: ${Spacing.S} solid ${Colors.Black.moonGray};
-    padding-left: ${Spacing.M};
-    margin-left: ${Spacing.M};
+    border-left: 8px solid ${Colors.Black.moonGray};
+    padding-left: ${ModScale.Xs};
+    margin-left: ${ModScale.Xs};
   }
 `;

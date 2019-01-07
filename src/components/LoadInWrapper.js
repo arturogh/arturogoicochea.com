@@ -1,10 +1,10 @@
-import {Spacing} from '../utils';
+import {ModScale} from '../utils';
 import styled, {keyframes} from 'styled-components';
 
 const loadIn = keyframes`
   0% {
     opacity: 0;
-    margin-top: -${Spacing.S};
+    margin-top: -${ModScale.S};
   }
   100% {
     opacity: 1

@@ -4,7 +4,7 @@ import {graphql} from 'gatsby';
 import {Wrapper, LoadInWrapper} from '../../components';
 import Img from 'gatsby-image';
 import {TextStyle} from '../../components/TextStyle';
-import {Spacing, FontSize} from './../../utils';
+import {ModScale} from './../../utils';
 
 const About = ({data}) => {
   return (
@@ -52,8 +52,8 @@ const StyledProfile = styled.div`
 `;
 
 const StyledAboutTitle = styled.h2`
-  font-size: ${FontSize.Xxl};
-  margin: ${Spacing.Xl} 0 ${Spacing.L};
+  font-size: ${ModScale.Xl};
+  margin: ${ModScale.Xl} 0 ${ModScale.L};
 `;
 
 export default About;

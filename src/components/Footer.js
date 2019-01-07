@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Spacing, Colors, FontSize} from '../utils';
+import {Colors, ModScale, maxWidth} from '../utils';
 import {StyledLinks} from './Nav';
 
 export const Footer = () => {
@@ -46,15 +46,24 @@ const StyledFooter = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: ${Spacing.S} 0 ${Spacing.Xl};
+  padding: ${ModScale.S} 0 ${ModScale.Xl};
+
+  @media (max-width: ${maxWidth}) {
+    flex-direction: column;
+  }
 `;
 
 const StyledFooterLinks = styled(StyledLinks)`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: ${maxWidth}) {
+    padding-bottom: ${ModScale.M};
+  }
+
   li a {
-    font-size: ${FontSize.Xxs};
+    font-size: ${ModScale.S};
     font-weight: 400;
 
     &:hover {
