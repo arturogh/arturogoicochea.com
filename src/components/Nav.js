@@ -6,7 +6,7 @@ import {Colors, ModScale, maxWidth} from './../utils';
 export const Nav = () => {
   return (
     <StyledNav>
-      <Link to="/" activeStyle={{color: Colors.Black.midGray}}>
+      <Link to="/">
         <SiteTitle>Arturo Goicochea</SiteTitle>
       </Link>
       {/* <StyledLinks>
@@ -33,16 +33,16 @@ const StyledNav = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: ${ModScale.L} 0 ${ModScale.Xl};
+  margin: ${ModScale.L} 0 ${ModScale.MPlus};
 
   @media (max-width: ${maxWidth}) {
     align-items: flex-start;
     margin: ${ModScale.M} 0 ${ModScale.MPlus};
   }
 
-  a {
+  /* a {
     color: ${Colors.Blue.Blue};
-  }
+  } */
 
   /* h2,
   li {
@@ -75,18 +75,23 @@ const StyledNav = styled.div`
 
   a {
     color: ${Colors.Blue.blue};
+    color: ${Colors.Black.midGray};
     text-decoration: none;
   }
 `;
 
 const SiteTitle = styled.h2`
   margin-bottom: 0;
-  font-size: ${ModScale.MPlus};
-  font-weight: 600;
+  font-size: ${ModScale.S};
+  font-weight: 400;
   color: inherit;
 
+  &:hover {
+    color: ${Colors.Black.nearBlack};
+  }
+
   @media (max-width: ${maxWidth}) {
-    padding-bottom: ${ModScale.S};
+    font-size: ${ModScale.S};
   }
 `;
 

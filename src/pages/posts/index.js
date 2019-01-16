@@ -38,7 +38,7 @@ const Posts = ({data}) => {
 };
 
 const Post = styled.div`
-  margin-bottom: ${ModScale.Xl};
+  margin-bottom: ${ModScale.M};
 
   .gatsby-image-wrapper {
     width: 60%;

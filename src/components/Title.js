@@ -22,12 +22,12 @@ const StyledContainer = styled.div`
 `;
 
 const StyledTitle = styled.h1`
-  font-size: ${ModScale.L};
+  font-size: ${ModScale.MPlus};
   font-weight: 800;
   color: ${Colors.Black.nearBlack};
   margin-bottom: ${ModScale.M};
 
   @media (max-width: ${maxWidth}) {
-    font-size: ${ModScale.MPlus};
+    font-size: calc(${ModScale.S} + ${ModScale.Xs});
   }
 `;

@@ -63,7 +63,7 @@ const StyledFooterLinks = styled(StyledLinks)`
   }
 
   li a {
-    font-size: ${ModScale.S};
+    font-size: ${ModScale.Xs};
     font-weight: 400;
 
     &:hover {
@@ -75,6 +75,7 @@ const StyledFooterLinks = styled(StyledLinks)`
 const CodedWith = styled.span`
   text-align: center;
   font-family: 'Inter UI', sans-serif;
+  font-size: ${ModScale.Xs};
 
   a {
     color: ${Colors.Blue.blue};

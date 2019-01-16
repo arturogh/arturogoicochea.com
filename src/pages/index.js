@@ -23,7 +23,7 @@ const Posts = ({data}) => {
             <Post>
               <LoadInWrapper>
                 <Link key={frontmatter.path} to={frontmatter.path}>
-                  <Img fluid={frontmatter.hero.childImageSharp.fluid} />
+                  {/* <Img fluid={frontmatter.hero.childImageSharp.fluid} /> */}
                   <CollectionItemTitle key={frontmatter.path}>
                     {frontmatter.title}
                   </CollectionItemTitle>
@@ -39,7 +39,7 @@ const Posts = ({data}) => {
 };
 
 const Post = styled.div`
-  margin-bottom: ${ModScale.Xl};
+  margin-bottom: ${ModScale.MPlus};
 
   @media (max-width: ${maxWidth}) {
   margin-bottom: ${ModScale.L};

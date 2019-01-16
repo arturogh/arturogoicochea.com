@@ -15,7 +15,7 @@ export const Wrapper = props => {
 };
 
 const StyledWrapper = styled.div`
-  max-width: 680px;
+  max-width: calc(700px + 2rem);
   margin: 0 auto;
   padding: ${ModScale.S};
 

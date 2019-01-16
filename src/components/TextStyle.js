@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {ModScale, Colors} from '../utils';
+import {ModScale, Colors, maxWidth} from '../utils';
 
 export const TextStyle = ({children}) => {
   return <StyledContent>{children}</StyledContent>;
@@ -11,14 +11,29 @@ const StyledContent = styled.div`
   color: ${Colors.Black.darkGray};
   margin-bottom: ${ModScale.Xxl};
 
+  @media (max-width: ${maxWidth}) {
+    font-size: 0.85rem;
+  }
+
   h2 {
-    margin: ${ModScale.S} 0 ${ModScale.S};
+    margin: ${ModScale.MPlus} 0;
     padding: 0;
+    @media (max-width: ${maxWidth}) {
+      margin: ${ModScale.MPlus} 0 ${ModScale.M};
+      font-size: ${ModScale.S};
+      font-weight: 800;
+    }
   }
 
   h3 {
-    margin: ${ModScale.L} 0 ${ModScale.M};
+    margin: ${ModScale.S} 0;
     padding: 0;
+
+    @media (max-width: ${maxWidth}) {
+      margin: ${ModScale.M} 0 ${ModScale.S};
+      font-size: ${ModScale.S};
+      font-weight: 500;
+    }
   }
 
   p {
@@ -46,6 +61,10 @@ const StyledContent = styled.div`
     color: ${Colors.Black.midGray};
     font-size: ${ModScale.S};
     line-height: 1.6;
+
+    @media (max-width: ${maxWidth}) {
+      font-size: 0.85rem;
+    }
 
     margin: ${ModScale.Xs} 0 calc(${ModScale.Xs} + ${ModScale.Xs});
 

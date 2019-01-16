@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import {ModScale, Colors, maxWidth} from './../utils';
 
 export const CollectionItemTitle = styled.h3`
-  font-size: ${ModScale.MPlus};
+  font-size: ${ModScale.M};
   font-weight: 800;
   padding-bottom: ${ModScale.Xs};
   margin-bottom: 0;
