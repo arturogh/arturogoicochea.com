@@ -4,13 +4,12 @@ import {graphql, Link} from 'gatsby';
 import {
   Wrapper,
   LinkCollection,
-  CollectionHeading,
   LoadInWrapper,
   CollectionItemTitle,
   CollectionExcerpt
 } from './../components';
 import {ModScale, maxWidth} from '../utils';
-import Img from 'gatsby-image';
+// import Img from 'gatsby-image';
 
 const Posts = ({data}) => {
   const {edges} = data.allMarkdownRemark;

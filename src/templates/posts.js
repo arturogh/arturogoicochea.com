@@ -1,12 +1,12 @@
 import React from 'react';
 import {Wrapper, Title, LoadInWrapper} from './../components';
-import {graphql, Link} from 'gatsby';
+import {graphql} from 'gatsby';
 import Img from 'gatsby-image';
 import {TextStyle} from '../components/TextStyle';
 
 const Template = ({data, pageContext}) => {
   const {markdownRemark} = data;
-  const {next, prev} = pageContext;
+  // const {next, prev} = pageContext;
   const title = markdownRemark.frontmatter.title;
   const tags = markdownRemark.frontmatter.tags;
   const html = markdownRemark.html;
