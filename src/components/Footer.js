@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Colors, ModScale, maxWidth} from '../utils';
+import {Colors, ModScale, maxWidth, typeScale} from '../utils';
 import {StyledLinks} from './Nav';
 
 export const Footer = () => {
@@ -33,19 +33,28 @@ export const Footer = () => {
         <a href="https://gatsbyjs.org/" target="_blank" rel="noopener noreferrer">
           Gatsby
         </a>{' '}
-        +{' '}
+        and{' '}
         <a href="https://styled-components.com/" target="_blank" rel="noopener noreferrer">
-          Styled Components
+          Styled Components.
+        </a>{' '}
+        Fonts used:{' '}
+        <a href="https://rsms.me/inter/" target="_blank" rel="noopener noreferrer">
+          Inter UI
         </a>
+        ,{' '}
+        <a href="https://github.com/skosch/Crimson" target="_blank" rel="noopener noreferrer">
+          Crimson Text
+        </a>
+        .
       </CodedWith>
     </StyledFooter>
   );
 };
 
 const StyledFooter = styled.div`
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
   padding: ${ModScale.S} 0 ${ModScale.Xl};
 
   @media (max-width: ${maxWidth}) {
@@ -55,15 +64,15 @@ const StyledFooter = styled.div`
 
 const StyledFooterLinks = styled(StyledLinks)`
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  padding: ${ModScale.S} 0 ${ModScale.S};
 
   @media (max-width: ${maxWidth}) {
     padding-bottom: ${ModScale.M};
   }
 
   li a {
-    font-size: ${ModScale.Xs};
+    font-size: ${typeScale.navSize};
     font-weight: 400;
 
     &:hover {
@@ -75,7 +84,7 @@ const StyledFooterLinks = styled(StyledLinks)`
 const CodedWith = styled.span`
   text-align: center;
   font-family: 'Inter UI', sans-serif;
-  font-size: ${ModScale.Xs};
+  font-size: ${typeScale.navSize};
 
   a {
     color: ${Colors.Blue.blue};

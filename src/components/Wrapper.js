@@ -17,7 +17,11 @@ export const Wrapper = props => {
 const StyledWrapper = styled.div`
   max-width: calc(700px + 2rem);
   margin: 0 auto;
-  padding: ${ModScale.S};
+  padding: ${ModScale.S} ${ModScale.Xs};
+
+  @media (max-width: ${maxWidth}) {
+    padding: ${ModScale.S};
+  }
 
   > div img {
     display: block;

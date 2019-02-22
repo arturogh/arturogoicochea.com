@@ -1,15 +1,15 @@
 import React from 'react';
 import {Link} from 'gatsby';
 import styled from 'styled-components';
-import {Colors, ModScale, maxWidth} from './../utils';
+import {Colors, ModScale, maxWidth, typeScale} from './../utils';
 
 export const Nav = () => {
   return (
     <StyledNav>
       <Link to="/">
-        <SiteTitle>Arturo Goicochea</SiteTitle>
+        <SiteTitle>Arturo</SiteTitle>
       </Link>
-      {/* <StyledLinks>
+      <StyledLinks>
         {navLinks.map((link, index) => (
           <li key={index}>
             <Link to={link.url} activeStyle={{color: Colors.Blue.blue}}>
@@ -17,7 +17,7 @@ export const Nav = () => {
             </Link>
           </li>
         ))}
-      </StyledLinks> */}
+      </StyledLinks>
     </StyledNav>
   );
 };
@@ -33,45 +33,12 @@ const StyledNav = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: ${ModScale.L} 0 ${ModScale.MPlus};
+  margin: ${ModScale.L} 0 ${ModScale.Xl};
 
   @media (max-width: ${maxWidth}) {
-    align-items: flex-start;
-    margin: ${ModScale.M} 0 ${ModScale.MPlus};
+    align-items: center;
+    margin: ${ModScale.M} 0 ${ModScale.L};
   }
-
-  /* a {
-    color: ${Colors.Blue.Blue};
-  } */
-
-  /* h2,
-  li {
-    transition: color 100ms ease-in;
-  }
-
-  h2 {
-    color: ${titleColor};
-
-    @media (max-width: ${maxWidth}) {
-      color: ${titleMobileColor};
-    }
-  }
-
-  &:hover h2 {
-    color: ${titleHoverColor};
-  }
-
-  li {
-    color: ${menuColor};
-
-    @media (max-width: ${maxWidth}) {
-      color: ${titleMobileColor};
-    }
-  }
-
-  &:hover li {
-    color: ${menuHoverColor};
-  } */
 
   a {
     color: ${Colors.Blue.blue};
@@ -82,8 +49,8 @@ const StyledNav = styled.div`
 
 const SiteTitle = styled.h2`
   margin-bottom: 0;
-  font-size: ${ModScale.S};
-  font-weight: 400;
+  font-size: ${typeScale.navSize};
+  font-weight: 600;
   color: inherit;
 
   &:hover {
@@ -92,30 +59,36 @@ const SiteTitle = styled.h2`
 
   @media (max-width: ${maxWidth}) {
     font-size: ${ModScale.S};
+    font-size: ${typeScale.navSize};
   }
 `;
 
 export const StyledLinks = styled.ul`
   display: flex;
+  justify-content: flex-end
   flex-wrap: wrap;
   font-family: 'Inter UI';
   list-style: none;
   margin: 0;
   font-weight: 500;
   color: ${Colors.Black.midGray};
-  font-size: ${ModScale.S};
+  font-size: ${typeScale.navSize};
   font-weight: 300;
 
   li {
-    padding-left: ${ModScale.M};
+    padding-left: ${ModScale.S};
     margin-bottom: 0;
+    
+    @media (max-width: ${maxWidth}) {
+    padding-left: ${ModScale.Xs};
+  }
 
     &:first-of-type {
       padding-left: 0;
     }
 
     @media (max-width: ${maxWidth}) {
-      font-size: ${ModScale.Xxs};
+      font-size: ${typeScale.navSize};
     }
 
     &:hover {
@@ -130,7 +103,7 @@ export const StyledLinks = styled.ul`
 `;
 
 export const navLinks = [
-  // {url: '/', text: 'Hello'},
-  {url: '/', text: 'Posts'},
+  {url: '/posts', text: 'Posts'},
+  {url: '/projects', text: 'Projects'},
   {url: '/about', text: 'About'}
 ];

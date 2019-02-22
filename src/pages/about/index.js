@@ -4,7 +4,7 @@ import {graphql} from 'gatsby';
 import {Wrapper, LoadInWrapper} from '../../components';
 import Img from 'gatsby-image';
 import {TextStyle} from '../../components/TextStyle';
-import {ModScale} from './../../utils';
+import {ModScale, typeScale} from './../../utils';
 
 const About = ({data}) => {
   return (
@@ -52,7 +52,8 @@ const StyledProfile = styled.div`
 `;
 
 const StyledAboutTitle = styled.h2`
-  font-size: ${ModScale.Xl};
+  font-size: ${typeScale.pageTitle};
+  font-weight: 800;
   margin: ${ModScale.Xl} 0 ${ModScale.L};
 `;
 

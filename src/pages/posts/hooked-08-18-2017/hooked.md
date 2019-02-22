@@ -42,11 +42,13 @@ Once you’re done with something, the app with automatically play something nex
 
 We’re putting candy in front of kids and expecting them not to eat it all…
 
-### Algorithms are raising our kids (or at least choosing their content)
+### Algorithms are raising our kids
 
-The brief time my son used Youtube Kids, he ended watching a [mindless screen recording of a spiderman wondering around, with children music](https://www.youtube.com/watch?v=SRME6VjZA8c) (with 5M views…). I don’t care if Youtube warns you that the algorithm isn’t perfect, that doesn’t mean we should expose our kids to it. Netflix at least only has real, safe content (not that it’s all perfect kids).
+Or at least choosing what they watch for them...The brief time my son used Youtube Kids, he ended watching a [mindless screen recording of a spiderman wondering around, with children music](https://www.youtube.com/watch?v=SRME6VjZA8c) (which at the time had 5M views…).
 
-With all this, I ask…What about helping kids learn, develop new skills, become better people?
+I don’t care if Youtube **warns** you that the algorithm isn’t perfect. That doesn’t absolve them from responsibility from what's on their platform, nor mean we should expose our kids to it. Netflix at least only has real, safe content (not that it’s all perfect kids).
+
+With all this, I ask…what about helping kids learn, develop new skills, become better people?
 
 You could say this is not the role of these kind of apps, but I disagree. Say a kid loves airplanes. Learning to build your own, or even design one from scratch…I think a lot of kids would love that. Or say a girl loves a show that takes place in the jungle. A documentary about said jungle might be interesting.
 

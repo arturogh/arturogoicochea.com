@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import {ModScale, Colors, maxWidth} from '../utils';
+import {ModScale, Colors, maxWidth, typeScale} from '../utils';
 
 export const TextStyle = ({children}) => {
   return <StyledContent>{children}</StyledContent>;
 };
 
 const StyledContent = styled.div`
-  font-size: ${ModScale.S};
+  font-size: ${typeScale.contentSize};
   color: ${Colors.Black.darkGray};
   margin-bottom: ${ModScale.Xxl};
 
@@ -16,21 +16,25 @@ const StyledContent = styled.div`
   }
 
   h2 {
-    margin: ${ModScale.MPlus} 0;
+    font-weight: 600;
+    font-size: ${typeScale.contentSize};
+    margin: ${ModScale.MPlus} 0 ${ModScale.S};
     padding: 0;
+    color: ${Colors.Black.darkGray};
+
     @media (max-width: ${maxWidth}) {
-      margin: ${ModScale.MPlus} 0 ${ModScale.M};
-      font-size: ${ModScale.S};
-      font-weight: 800;
+      font-weight: 600;
     }
   }
 
   h3 {
-    margin: ${ModScale.S} 0;
+    font-weight: 500;
+    font-size: ${typeScale.contentSize};
+    margin: ${ModScale.S} 0 ${ModScale.Xs};
     padding: 0;
+    color: ${Colors.Black.midGray};
 
     @media (max-width: ${maxWidth}) {
-      margin: ${ModScale.M} 0 ${ModScale.S};
       font-size: ${ModScale.S};
       font-weight: 500;
     }
@@ -39,6 +43,7 @@ const StyledContent = styled.div`
   p {
     padding: 0 0 ${ModScale.S};
     margin: 0;
+    font-weight: 300;
   }
 
   a {
@@ -58,8 +63,7 @@ const StyledContent = styled.div`
   }
 
   blockquote {
-    color: ${Colors.Black.midGray};
-    font-size: ${ModScale.S};
+    font-size: ${typeScale.contentSize};
     line-height: 1.6;
 
     @media (max-width: ${maxWidth}) {

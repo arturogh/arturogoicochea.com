@@ -6,5 +6,6 @@ export const ModScale = {
   MPlus: '2.25rem',
   M: '1.5rem',
   S: '1rem',
-  Xs: '0.667rem'
+  Xs: '0.667rem',
+  Xxs: '0.25rem'
 };

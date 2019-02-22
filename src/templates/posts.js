@@ -13,8 +13,8 @@ const Template = ({data, pageContext}) => {
   return (
     <Wrapper>
       <LoadInWrapper>
-        <Title title={title} type="Post" tags={tags} />
         <Img fluid={markdownRemark.frontmatter.hero.childImageSharp.fluid} />
+        <Title title={title} type="Post" tags={tags} />
 
         <TextStyle>
           <div dangerouslySetInnerHTML={{__html: html}} />
