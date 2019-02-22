@@ -15,28 +15,7 @@ const Posts = ({data}) => {
   const {edges} = data.allMarkdownRemark;
   return (
     <Wrapper>
-      <LinkCollection>
-        {edges.map(edge => {
-          const {frontmatter} = edge.node;
-          return (
-            <Post key={frontmatter.path}>
-              <LoadInWrapper>
-                <PostWrapper>
-                  <Img fluid={frontmatter.hero.childImageSharp.fluid} />
-                  <TextWrapper>
-                    <Link key={frontmatter.path} to={frontmatter.path}>
-                      <CollectionItemTitle key={frontmatter.path}>
-                        {frontmatter.title}
-                      </CollectionItemTitle>
-                    </Link>
-                    <CollectionExcerpt>{frontmatter.excerpt}</CollectionExcerpt>
-                  </TextWrapper>
-                </PostWrapper>
-              </LoadInWrapper>
-            </Post>
-          );
-        })}
-      </LinkCollection>
+      <h2>Some content goes here.</h2>
     </Wrapper>
   );
 };
@@ -45,14 +24,8 @@ const Post = styled.div`
   margin-bottom: ${ModScale.S};
 
   @media (max-width: ${maxWidth}) {
-  margin-bottom: ${ModScale.M};
-    }
-
-  
-/* 
-    @media (max-width: ${maxWidth}) {
-      width: 100%;
-    } */
+    margin-bottom: ${ModScale.M};
+  }
 `;
 
 const PostWrapper = styled.div`

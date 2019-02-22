@@ -8,7 +8,7 @@ import {
   CollectionItemTitle,
   CollectionExcerpt
 } from './../../components';
-import {ModScale} from '../../utils';
+import {ModScale, maxWidth} from '../../utils';
 import Img from 'gatsby-image';
 
 const Posts = ({data}) => {
@@ -19,15 +19,19 @@ const Posts = ({data}) => {
         {edges.map(edge => {
           const {frontmatter} = edge.node;
           return (
-            <Post>
+            <Post key={frontmatter.path}>
               <LoadInWrapper>
-                <Link key={frontmatter.path} to={frontmatter.path}>
+                <PostWrapper>
                   <Img fluid={frontmatter.hero.childImageSharp.fluid} />
-                  <CollectionItemTitle key={frontmatter.path}>
-                    {frontmatter.title}
-                  </CollectionItemTitle>
-                </Link>
-                <CollectionExcerpt>{frontmatter.excerpt}</CollectionExcerpt>
+                  <TextWrapper>
+                    <Link key={frontmatter.path} to={frontmatter.path}>
+                      <CollectionItemTitle key={frontmatter.path}>
+                        {frontmatter.title}
+                      </CollectionItemTitle>
+                    </Link>
+                    <CollectionExcerpt>{frontmatter.excerpt}</CollectionExcerpt>
+                  </TextWrapper>
+                </PostWrapper>
               </LoadInWrapper>
             </Post>
           );
@@ -38,11 +42,38 @@ const Posts = ({data}) => {
 };
 
 const Post = styled.div`
-  margin-bottom: ${ModScale.M};
+  margin-bottom: ${ModScale.S};
 
-  .gatsby-image-wrapper {
-    width: 60%;
+  @media (max-width: ${maxWidth}) {
+    margin-bottom: ${ModScale.M};
+  }
+`;
+
+const PostWrapper = styled.div`
+  display: flex;
+
+  @media (max-width: ${maxWidth}) {
+    display: block;
+  }
+
+  &&& .gatsby-image-wrapper {
+    width: 175px;
+    height: 175px;
     margin-bottom: ${ModScale.S};
+
+    @media (max-width: ${maxWidth}) {
+      height: auto;
+      width: 100%;
+    }
+  }
+`;
+
+const TextWrapper = styled.div`
+  width: 75%;
+  padding-left: ${ModScale.Xs};
+  @media (max-width: ${maxWidth}) {
+    width: 100%;
+    padding-left: 0;
   }
 `;
 
