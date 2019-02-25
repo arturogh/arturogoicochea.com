@@ -1,5 +1,5 @@
 import React from 'react';
-import {Wrapper, Title, LoadInWrapper} from './../components';
+import {Wrapper, Title} from './../components';
 import {graphql} from 'gatsby';
 import Img from 'gatsby-image';
 import {TextStyle} from '../components/TextStyle';
@@ -12,17 +12,15 @@ const Template = ({data, pageContext}) => {
   const html = markdownRemark.html;
   return (
     <Wrapper>
-      <LoadInWrapper>
-        <Img fluid={markdownRemark.frontmatter.hero.childImageSharp.fluid} />
-        <Title title={title} type="Post" tags={tags} />
+      <Img fluid={markdownRemark.frontmatter.hero.childImageSharp.fluid} />
+      <Title title={title} type="Post" tags={tags} />
 
-        <TextStyle>
-          <div dangerouslySetInnerHTML={{__html: html}} />
-        </TextStyle>
+      <TextStyle>
+        <div dangerouslySetInnerHTML={{__html: html}} />
+      </TextStyle>
 
-        {/* {prev && <Link to={prev.frontmatter.path}>Previous post</Link>}
+      {/* {prev && <Link to={prev.frontmatter.path}>Previous post</Link>}
         {next && <Link to={next.frontmatter.path}>Next post</Link>} */}
-      </LoadInWrapper>
     </Wrapper>
   );
 };

@@ -19,7 +19,7 @@ const StyledTags = styled.ul`
   margin: 0;
 
   li:first-of-type {
-    font-weight: 600;
+    /* font-weight: 600; */
     color: ${Colors.Black.midGray};
   }
 
@@ -39,6 +39,6 @@ const Tag = ({tag}) => {
 
 const StyledTag = styled.li`
   padding-right: ${ModScale.Xs};
-  font-size: ${ModScale.Xxs};
+  /* font-size: ${ModScale.Xxs}; */
   font-family: 'Inter UI', sans-serif;
 `;

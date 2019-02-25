@@ -8,6 +8,9 @@ export const Footer = () => {
     <StyledFooter>
       <StyledFooterLinks>
         <li>
+          <span>Find me on:</span>
+        </li>
+        <li>
           <a href="https://twitter.com/arturogoicochea" target="_blank" rel="noopener noreferrer">
             Twitter
           </a>
@@ -29,15 +32,15 @@ export const Footer = () => {
       </StyledFooterLinks>
 
       <CodedWith>
-        Coded with{' '}
+        Built with{' '}
         <a href="https://gatsbyjs.org/" target="_blank" rel="noopener noreferrer">
           Gatsby
         </a>{' '}
-        and{' '}
+        &{' '}
         <a href="https://styled-components.com/" target="_blank" rel="noopener noreferrer">
           Styled Components.
         </a>{' '}
-        Fonts used:{' '}
+        Fonts:{' '}
         <a href="https://rsms.me/inter/" target="_blank" rel="noopener noreferrer">
           Inter UI
         </a>
@@ -55,7 +58,7 @@ const StyledFooter = styled.div`
   /* display: flex;
   justify-content: space-between;
   align-items: center; */
-  padding: ${ModScale.S} 0 ${ModScale.Xl};
+  /* padding: ${ModScale.S} 0 ${ModScale.Xl}; */
 
   @media (max-width: ${maxWidth}) {
     flex-direction: column;
@@ -65,15 +68,19 @@ const StyledFooter = styled.div`
 const StyledFooterLinks = styled(StyledLinks)`
   display: flex;
   align-items: center;
-  padding: ${ModScale.S} 0 ${ModScale.S};
+  /* padding: ${ModScale.S} 0 ${ModScale.S}; */
 
-  @media (max-width: ${maxWidth}) {
+  /* @media (max-width: ${maxWidth}) {
     padding-bottom: ${ModScale.M};
+  } */
+
+  span {
+    color: ${Colors.Black.gray};
   }
 
   li a {
-    font-size: ${typeScale.navSize};
-    font-weight: 400;
+    /* font-size: ${typeScale.navSize}; */
+    /* font-weight: 400; */
 
     &:hover {
       color: ${Colors.Blue.darkBlue};
@@ -84,10 +91,11 @@ const StyledFooterLinks = styled(StyledLinks)`
 const CodedWith = styled.span`
   text-align: center;
   font-family: 'Inter UI', sans-serif;
-  font-size: ${typeScale.navSize};
+  /* font-size: ${typeScale.navSize}; */
+  color: ${Colors.Black.gray};
 
   a {
-    color: ${Colors.Blue.blue};
+    color: ${Colors.Black.gray};
     text-decoration: none;
 
     &:hover {

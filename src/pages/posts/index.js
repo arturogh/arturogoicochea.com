@@ -1,14 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import {graphql, Link} from 'gatsby';
-import {
-  Wrapper,
-  LinkCollection,
-  LoadInWrapper,
-  CollectionItemTitle,
-  CollectionExcerpt
-} from './../../components';
-import {ModScale, maxWidth} from '../../utils';
+import {Wrapper, ListingTitle, ListingExcerpt} from './../../components';
+import {ModScale, maxWidth, Colors} from '../../utils';
 import Img from 'gatsby-image';
 
 const Posts = ({data}) => {
@@ -20,19 +14,15 @@ const Posts = ({data}) => {
           const {frontmatter} = edge.node;
           return (
             <Post key={frontmatter.path}>
-              <LoadInWrapper>
-                <PostWrapper>
-                  <Img fluid={frontmatter.hero.childImageSharp.fluid} />
-                  <TextWrapper>
-                    <Link key={frontmatter.path} to={frontmatter.path}>
-                      <CollectionItemTitle key={frontmatter.path}>
-                        {frontmatter.title}
-                      </CollectionItemTitle>
-                    </Link>
-                    <CollectionExcerpt>{frontmatter.excerpt}</CollectionExcerpt>
-                  </TextWrapper>
-                </PostWrapper>
-              </LoadInWrapper>
+              <PostWrapper>
+                {/* <Img fluid={frontmatter.hero.childImageSharp.fluid} /> */}
+                {/* <TextWrapper> */}
+                <Link key={frontmatter.path} to={frontmatter.path}>
+                  <ListingTitle key={frontmatter.path}>{frontmatter.title}</ListingTitle>
+                </Link>
+                <ListingExcerpt>{frontmatter.excerpt}</ListingExcerpt>
+                {/* </TextWrapper> */}
+              </PostWrapper>
             </Post>
           );
         })}
@@ -41,32 +31,32 @@ const Posts = ({data}) => {
   );
 };
 
-const Post = styled.div`
-  margin-bottom: ${ModScale.S};
+const LinkCollection = styled.div`
+  a {
+    /* font-size: ${ModScale.S}; */
+    color: ${Colors.Blue.blue};
+    text-decoration: none;
+    font-family: 'Inter UI', sans-serif;
 
-  @media (max-width: ${maxWidth}) {
-    margin-bottom: ${ModScale.M};
-  }
-`;
-
-const PostWrapper = styled.div`
-  display: flex;
-
-  @media (max-width: ${maxWidth}) {
-    display: block;
-  }
-
-  &&& .gatsby-image-wrapper {
-    width: 175px;
-    height: 175px;
-    margin-bottom: ${ModScale.S};
-
-    @media (max-width: ${maxWidth}) {
-      height: auto;
-      width: 100%;
+    &:hover {
+      color: ${Colors.Blue.darkBlue};
     }
   }
 `;
+
+const Post = styled.div`
+  margin-bottom: 0;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: ${maxWidth}) {
+    /* margin-bottom: ${ModScale.M}; */
+  }
+`;
+
+const PostWrapper = styled.div``;
 
 const TextWrapper = styled.div`
   width: 75%;

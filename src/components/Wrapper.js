@@ -15,26 +15,27 @@ export const Wrapper = props => {
 };
 
 const StyledWrapper = styled.div`
-  max-width: calc(700px + 2rem);
+  max-width: calc(700px + 20px);
   margin: 0 auto;
-  padding: ${ModScale.S} ${ModScale.Xs};
+  padding: 0 20px;
+  /* padding: ${ModScale.S} ${ModScale.Xs}; */
 
-  @media (max-width: ${maxWidth}) {
+  /* @media (max-width: ${maxWidth}) {
     padding: ${ModScale.S};
-  }
+  } */
 
   > div img {
     display: block;
     border-radius: ${ModScale.Xs};
-    margin-bottom: ${ModScale.S};
+    /* margin-bottom: ${ModScale.S}; */
   }
 
   > .gatsby-image-wrapper,
   div > .gatsby-image-wrapper {
-    margin-bottom: ${ModScale.M};
+    /* margin-bottom: ${ModScale.M}; */
 
     @media (max-width: ${maxWidth}) {
-      margin-bottom: ${ModScale.M};
+      /* margin-bottom: ${ModScale.M}; */
     }
   }
 `;

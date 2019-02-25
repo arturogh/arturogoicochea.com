@@ -1,13 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {graphql, Link} from 'gatsby';
-import {
-  Wrapper,
-  LinkCollection,
-  LoadInWrapper,
-  CollectionItemTitle,
-  CollectionExcerpt
-} from './../components';
+import {Wrapper, CollectionItemTitle, CollectionExcerpt} from './../components';
 import {ModScale, maxWidth} from '../utils';
 import Img from 'gatsby-image';
 
@@ -15,16 +9,19 @@ const Posts = ({data}) => {
   const {edges} = data.allMarkdownRemark;
   return (
     <Wrapper>
-      <h2>Some content goes here.</h2>
+      <p>Here I feature content.</p>
+      {/* About */}
+      {/* Posts */}
+      {/* Projects */}
     </Wrapper>
   );
 };
 
 const Post = styled.div`
-  margin-bottom: ${ModScale.S};
+  /* margin-bottom: ${ModScale.S}; */
 
   @media (max-width: ${maxWidth}) {
-    margin-bottom: ${ModScale.M};
+    /* margin-bottom: ${ModScale.M}; */
   }
 `;
 
@@ -38,7 +35,7 @@ const PostWrapper = styled.div`
   &&& .gatsby-image-wrapper {
     width: 175px;
     height: 175px;
-    margin-bottom: ${ModScale.S};
+    /* margin-bottom: ${ModScale.S}; */
 
     @media (max-width: ${maxWidth}) {
       height: auto;
@@ -47,14 +44,14 @@ const PostWrapper = styled.div`
   }
 `;
 
-const TextWrapper = styled.div`
-  width: 75%;
-  padding-left: ${ModScale.Xs};
-  @media (max-width: ${maxWidth}) {
-    width: 100%;
-    padding-left: 0;
-  }
-`;
+// const TextWrapper = styled.div`
+//   width: 75%;
+//   padding-left: ${ModScale.Xs};
+//   @media (max-width: ${maxWidth}) {
+//     width: 100%;
+//     padding-left: 0;
+//   }
+// `;
 
 export const query = graphql`
   query {

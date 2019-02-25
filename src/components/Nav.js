@@ -22,18 +22,11 @@ export const Nav = () => {
   );
 };
 
-const titleColor = Colors.Black.midGray;
-const titleHoverColor = Colors.Black.nearBlack;
-const titleMobileColor = Colors.Black.darkGray;
-
-const menuColor = Colors.Black.gray;
-const menuHoverColor = Colors.Black.darkGray;
-
 const StyledNav = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: ${ModScale.L} 0 ${ModScale.Xl};
+  /* margin: ${ModScale.L} 0 ${ModScale.Xl}; */
 
   @media (max-width: ${maxWidth}) {
     align-items: center;
@@ -49,8 +42,8 @@ const StyledNav = styled.div`
 
 const SiteTitle = styled.h2`
   margin-bottom: 0;
-  font-size: ${typeScale.navSize};
-  font-weight: 600;
+  /* font-size: ${typeScale.navSize}; */
+  /* font-weight: 600; */
   color: inherit;
 
   &:hover {
@@ -58,37 +51,37 @@ const SiteTitle = styled.h2`
   }
 
   @media (max-width: ${maxWidth}) {
-    font-size: ${ModScale.S};
-    font-size: ${typeScale.navSize};
+    /* font-size: ${ModScale.S};
+    font-size: ${typeScale.navSize}; */
   }
 `;
 
 export const StyledLinks = styled.ul`
   display: flex;
-  justify-content: flex-end
+  justify-content: flex-end;
   flex-wrap: wrap;
   font-family: 'Inter UI';
   list-style: none;
   margin: 0;
-  font-weight: 500;
+  /* font-weight: 500; */
   color: ${Colors.Black.midGray};
-  font-size: ${typeScale.navSize};
-  font-weight: 300;
+  /* font-size: ${typeScale.navSize}; */
+  /* font-weight: 300; */
 
   li {
     padding-left: ${ModScale.S};
     margin-bottom: 0;
-    
+
     @media (max-width: ${maxWidth}) {
-    padding-left: ${ModScale.Xs};
-  }
+      padding-left: ${ModScale.Xs};
+    }
 
     &:first-of-type {
       padding-left: 0;
     }
 
     @media (max-width: ${maxWidth}) {
-      font-size: ${typeScale.navSize};
+      /* font-size: ${typeScale.navSize}; */
     }
 
     &:hover {
