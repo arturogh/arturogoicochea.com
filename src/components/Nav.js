@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'gatsby';
 import styled from 'styled-components';
-import {Colors, ModScale, maxWidth, typeScale} from './../utils';
+import {Colors, ModScale, maxWidth, font} from './../utils';
 
 export const Nav = () => {
   return (
@@ -26,12 +26,7 @@ const StyledNav = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin: ${ModScale.L} 0 ${ModScale.Xl}; */
-
-  @media (max-width: ${maxWidth}) {
-    align-items: center;
-    margin: ${ModScale.M} 0 ${ModScale.L};
-  }
+  margin: ${ModScale.standard} 0;
 
   a {
     color: ${Colors.Blue.blue};
@@ -42,17 +37,15 @@ const StyledNav = styled.div`
 
 const SiteTitle = styled.h2`
   margin-bottom: 0;
-  /* font-size: ${typeScale.navSize}; */
-  /* font-weight: 600; */
-  color: inherit;
+  font-size: ${font.getFontData('siteTitle').size};
+  font-weight: ${font.getFontData('siteTitle').weight};
+  color: ${font.getFontData('siteTitle').color};
 
   &:hover {
     color: ${Colors.Black.nearBlack};
   }
 
   @media (max-width: ${maxWidth}) {
-    /* font-size: ${ModScale.S};
-    font-size: ${typeScale.navSize}; */
   }
 `;
 
@@ -61,15 +54,14 @@ export const StyledLinks = styled.ul`
   justify-content: flex-end;
   flex-wrap: wrap;
   font-family: 'Inter UI';
+  font-size: ${font.getFontData('nav').size};
+  font-weight: ${font.getFontData('nav').weight};
+
   list-style: none;
   margin: 0;
-  /* font-weight: 500; */
-  color: ${Colors.Black.midGray};
-  /* font-size: ${typeScale.navSize}; */
-  /* font-weight: 300; */
 
   li {
-    padding-left: ${ModScale.S};
+    padding-left: ${ModScale.standard};
     margin-bottom: 0;
 
     @media (max-width: ${maxWidth}) {
@@ -81,7 +73,6 @@ export const StyledLinks = styled.ul`
     }
 
     @media (max-width: ${maxWidth}) {
-      /* font-size: ${typeScale.navSize}; */
     }
 
     &:hover {
@@ -90,7 +81,7 @@ export const StyledLinks = styled.ul`
   }
 
   a {
-    color: inherit;
+    color: ${font.getFontData('nav').color};
     text-decoration: none;
   }
 `;

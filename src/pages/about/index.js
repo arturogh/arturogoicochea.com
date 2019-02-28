@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import {graphql} from 'gatsby';
-import {Wrapper} from '../../components';
+import {Wrapper, Title, TextStyle} from '../../components';
 import Img from 'gatsby-image';
-import {TextStyle} from '../../components/TextStyle';
-import {ModScale, typeScale} from './../../utils';
+import {} from '../../components/TextStyle';
+import {ModScale} from '../../utils';
 
 const About = ({data}) => {
   return (
@@ -15,6 +15,27 @@ const About = ({data}) => {
       <StyledAboutTitle>Hey, I'm Arturo</StyledAboutTitle>
       <TextStyle>
         <p>
+          Peruvian{' '}
+          <span role="img" aria-label="Peru flag emoji">
+            🇵🇪
+          </span>{' '}
+          designer living in Seattle, currently at Microsoft in the Office prototyping team, working
+          on the future (
+          <span role="img" aria-label="shhh emoji">
+            🤫
+          </span>
+          ).
+        </p>
+        <p>
+          My favorite projects are complex, messy and challenging. What most motivates me is doing
+          impactful, collaborative work that brings people forward or empowers them to achieve their
+          goals and do good.
+        </p>
+        <p>
+          My workflow centers on simultaneously thinking end to end through the interactions and
+          system I'm working on. My tool of choice is code, specifically JS, HTML and CSS.
+        </p>
+        {/* <p>
           Peruvian designer currently at Microsoft, prototyping the future of Office. In previous
           design roles I worked on file creation, saving and collaboration, as well as an unreleased
           mobile app.
@@ -39,7 +60,7 @@ const About = ({data}) => {
             </a>{' '}
             in January 2015, when it still operated a web shop.
           </li>
-        </ul>
+        </ul> */}
       </TextStyle>
     </Wrapper>
   );
@@ -47,13 +68,13 @@ const About = ({data}) => {
 
 const StyledProfile = styled.div`
   width: 40%;
+  margin: ${ModScale.large} 0 ${ModScale.small};
+  img {
+    border-radius: 4px;
+  }
 `;
 
-const StyledAboutTitle = styled.h2`
-  /* font-size: ${typeScale.pageTitle}; */
-  /* font-weight: 800; */
-  /* margin: ${ModScale.Xl} 0 ${ModScale.L}; */
-`;
+const StyledAboutTitle = styled(Title)``;
 
 export default About;
 

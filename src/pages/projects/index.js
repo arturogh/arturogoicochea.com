@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {Wrapper} from './../../components/Wrapper';
 import {graphql, Link} from 'gatsby';
 import Img from 'gatsby-image';
-import {ListingTitle, ListingExcerpt} from '../../components';
+import {ListingTitle} from '../../components';
 import {ModScale} from '../../utils';
 
 const Projects = ({data}) => {

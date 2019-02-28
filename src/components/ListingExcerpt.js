@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import {Colors, maxWidth, typeScale} from './../utils';
+import {Colors, maxWidth, font} from './../utils';
 
 export const ListingExcerpt = styled.p`
-  /* font-size: ${typeScale.excerptSize}; */
   font-family: 'Inter UI', sans-serif;
-  /* line-height: 1.6; */
   color: ${Colors.Black.darkGray};
+  font-size: ${font.getFontData('listingExcerpt').size};
+  font-weight: ${font.getFontData('listingExcerpt').weight};
+  margin: 0;
 
   @media (max-width: ${maxWidth}) {
-    /* font-size: ${typeScale.excerptSize}; */
   }
 `;

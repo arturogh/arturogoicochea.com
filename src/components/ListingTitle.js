@@ -1,18 +1,14 @@
 import styled from 'styled-components';
-import {ModScale, Colors, maxWidth, typeScale} from '../utils';
+import {ModScale, Colors, maxWidth, font} from '../utils';
 
 export const ListingTitle = styled.h3`
-  /* font-size: ${typeScale.contentSize}; */
-  /* font-weight: 800; */
-  /* padding-bottom: ${ModScale.Xxs}; */
-  margin-bottom: 0;
+  display: block;
+  margin-bottom: ${ModScale.xSmall};
   color: ${Colors.Blue.blue};
-  /* line-height: 1.25; */
+  font-size: ${font.getFontData('listingTitle').size};
+  font-weight: ${font.getFontData('listingTitle').weight};
 
   @media (max-width: ${maxWidth}) {
-    /* padding-bottom: ${ModScale.Xs}; */
-    /* font-size: ${typeScale.contentSize}; */
-    /* font-weight: 700; */
   }
 
   &:hover {

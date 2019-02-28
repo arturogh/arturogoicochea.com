@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Colors, ModScale, maxWidth, typeScale} from '../utils';
+import {Colors, ModScale, maxWidth, font} from '../utils';
 import {StyledLinks} from './Nav';
 
 export const Footer = () => {
@@ -55,6 +55,7 @@ export const Footer = () => {
 };
 
 const StyledFooter = styled.div`
+  margin: ${ModScale.xLarge} 0;
   /* display: flex;
   justify-content: space-between;
   align-items: center; */
@@ -68,7 +69,7 @@ const StyledFooter = styled.div`
 const StyledFooterLinks = styled(StyledLinks)`
   display: flex;
   align-items: center;
-  /* padding: ${ModScale.S} 0 ${ModScale.S}; */
+  padding-bottom: ${ModScale.standard};
 
   /* @media (max-width: ${maxWidth}) {
     padding-bottom: ${ModScale.M};
@@ -76,11 +77,13 @@ const StyledFooterLinks = styled(StyledLinks)`
 
   span {
     color: ${Colors.Black.gray};
+    font-size: ${font.getFontData('footerLinks').size};
+    font-weight: ${font.getFontData('footerLinks').weight};
   }
 
   li a {
-    /* font-size: ${typeScale.navSize}; */
-    /* font-weight: 400; */
+    font-size: ${font.getFontData('footerLinks').size};
+    font-weight: ${font.getFontData('footerLinks').weight};
 
     &:hover {
       color: ${Colors.Blue.darkBlue};
@@ -89,9 +92,11 @@ const StyledFooterLinks = styled(StyledLinks)`
 `;
 
 const CodedWith = styled.span`
+  display: block;
   text-align: center;
   font-family: 'Inter UI', sans-serif;
-  /* font-size: ${typeScale.navSize}; */
+  font-size: ${font.getFontData('footerMadeWith').size};
+  font-weight: ${font.getFontData('footerMadeWith').weight};
   color: ${Colors.Black.gray};
 
   a {

@@ -1,29 +1,26 @@
 import React from 'react';
 import styled from 'styled-components';
-import {graphql, Link} from 'gatsby';
-import {Wrapper, ListingTitle, ListingExcerpt} from './../../components';
-import {ModScale, maxWidth, Colors} from '../../utils';
-import Img from 'gatsby-image';
+import {graphql} from 'gatsby';
+import {Wrapper, PostItem, PageSubText, PageTitle} from './../../components';
+import {ModScale, Colors} from '../../utils';
 
 const Posts = ({data}) => {
   const {edges} = data.allMarkdownRemark;
   return (
     <Wrapper>
       <LinkCollection>
+        <PageTitle>Posts:</PageTitle>
+        <PageSubText>Thoughts on tech, teamwork, society and more</PageSubText>
         {edges.map(edge => {
           const {frontmatter} = edge.node;
           return (
-            <Post key={frontmatter.path}>
-              <PostWrapper>
-                {/* <Img fluid={frontmatter.hero.childImageSharp.fluid} /> */}
-                {/* <TextWrapper> */}
-                <Link key={frontmatter.path} to={frontmatter.path}>
-                  <ListingTitle key={frontmatter.path}>{frontmatter.title}</ListingTitle>
-                </Link>
-                <ListingExcerpt>{frontmatter.excerpt}</ListingExcerpt>
-                {/* </TextWrapper> */}
-              </PostWrapper>
-            </Post>
+            <PostItem
+              key={frontmatter.path}
+              link={frontmatter.path}
+              title={frontmatter.title}
+              excerpt={frontmatter.excerpt}
+              img={frontmatter.hero.childImageSharp.fluid}
+            />
           );
         })}
       </LinkCollection>
@@ -41,29 +38,6 @@ const LinkCollection = styled.div`
     &:hover {
       color: ${Colors.Blue.darkBlue};
     }
-  }
-`;
-
-const Post = styled.div`
-  margin-bottom: 0;
-
-  p {
-    margin-bottom: 0;
-  }
-
-  @media (max-width: ${maxWidth}) {
-    /* margin-bottom: ${ModScale.M}; */
-  }
-`;
-
-const PostWrapper = styled.div``;
-
-const TextWrapper = styled.div`
-  width: 75%;
-  padding-left: ${ModScale.Xs};
-  @media (max-width: ${maxWidth}) {
-    width: 100%;
-    padding-left: 0;
   }
 `;
 

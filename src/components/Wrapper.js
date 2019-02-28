@@ -18,16 +18,14 @@ const StyledWrapper = styled.div`
   max-width: calc(700px + 20px);
   margin: 0 auto;
   padding: 0 20px;
-  /* padding: ${ModScale.S} ${ModScale.Xs}; */
 
-  /* @media (max-width: ${maxWidth}) {
-    padding: ${ModScale.S};
-  } */
+  @media (max-width: ${maxWidth}) {
+  padding: 0 8px;
+  }
 
   > div img {
     display: block;
     border-radius: ${ModScale.Xs};
-    /* margin-bottom: ${ModScale.S}; */
   }
 
   > .gatsby-image-wrapper,
