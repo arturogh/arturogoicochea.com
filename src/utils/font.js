@@ -36,7 +36,9 @@ export const font = {
       case 'nav':
         return {size: this.size.small, weight: this.weight.semibold, color: this.color.light};
       case 'siteTitle':
-        return {size: this.size.small, weight: this.weight.semibold, color: this.color.standard};
+        return {size: this.size.large, weight: this.weight.semibold, color: this.color.nearBlack};
+      case 'siteSubText':
+        return {size: this.size.reading, weight: this.weight.regular, color: this.color.standard};
       case 'listingTitle':
         return {size: this.size.standard, weight: this.weight.semiBold, color: this.color.light};
       case 'listingExcerpt':

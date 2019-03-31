@@ -7,7 +7,7 @@ import {Footer} from './Footer';
 export const Wrapper = props => {
   return (
     <StyledWrapper>
-      <Nav />
+      {/* <Nav /> */}
       {props.children}
       <Footer />
     </StyledWrapper>

@@ -12,11 +12,14 @@ const HomePage = ({data}) => {
       <StyledHome>
         {/* About */}
         <AboutText>
-          <strong>Designer</strong> @ Microsoft Office prototyping team. Code is my friend{' '}
-          <span role="img" aria-label="heart emoji">
-            ❤️
-          </span>
-          ️.
+          <Name>Arturo Goicochea</Name>
+          <AboutSubText>
+            <strong>Designer</strong> (
+            <span role="img" aria-label="heart emoji">
+              ❤️{' '}
+            </span>
+            code) at Microsoft Office prototyping team.
+          </AboutSubText>
         </AboutText>
         {/* Posts */}
         <PageTitle>Posts:</PageTitle>
@@ -31,16 +34,6 @@ const HomePage = ({data}) => {
             img={edge.node.frontmatter.hero.childImageSharp.fluid}
           />
         ))}
-        <HomeLink>
-          <Link to="/posts">See all posts</Link>
-        </HomeLink>
-
-        {/* Projects */}
-        <PageTitle>Projects:</PageTitle>
-        <PageSubText>Freebound explorations, for fun or to learn something new</PageSubText>
-        <HomeLink>
-          <Link to="/projects">See all projects</Link>
-        </HomeLink>
       </StyledHome>
     </Wrapper>
   );
@@ -57,7 +50,6 @@ const AboutText = styled.div`
   margin: ${ModScale.xLarge} 0;
   font-size: ${font.getFontData('homeText').size};
   font-weight: ${font.getFontData('homeText').weight};
-  text-align: center;
 
   @media (max-width: 700px) {
     text-align: left;
@@ -66,6 +58,20 @@ const AboutText = styled.div`
     margin: ${ModScale.large} 0;
     line-height: calc(${font.getFontData('homeText').size} * 2);
   }
+`;
+
+const Name = styled.h2`
+  font-size: ${font.getFontData('siteTitle').size};
+  font-weight: ${font.getFontData('siteTitle').weight};
+  color: ${font.getFontData('siteTitle').color};
+  margin: 0;
+  padding: 0;
+`;
+
+const AboutSubText = styled.div`
+  font-size: ${font.getFontData('siteSubText').size};
+  font-weight: ${font.getFontData('siteSubText').weight};
+  color: ${font.getFontData('siteSubText').color};
 `;
 
 const HomeLink = styled.div`

@@ -9,9 +9,9 @@ import Img from 'gatsby-image';
 export const PostItem = ({title, excerpt, link, img}) => {
   return (
     <StyledPost>
-      <Link to={link}>
+      {/* <Link to={link}>
         <Img fluid={img} />
-      </Link>
+      </Link> */}
       <TextWrapper>
         <Link to={link}>
           <ListingTitle>{title}</ListingTitle>
