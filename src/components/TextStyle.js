@@ -14,6 +14,9 @@ const StyledContent = styled.div`
 
   h2 {
     padding: 0;
+    font-size: ${font.getFontData('h2').size};
+    font-weight: ${font.getFontData('h2').weight};
+    margin: ${ModScale.medium} 0 ${ModScale.standardPlus};
     color: ${Colors.Black.darkGray};
 
     @media (max-width: ${maxWidth}) {
@@ -21,7 +24,10 @@ const StyledContent = styled.div`
   }
 
   h3 {
+    font-size: ${font.getFontData('h3').size};
+    font-weight: ${font.getFontData('h3').weight};
     padding: 0;
+    margin: ${ModScale.standardPlus} 0 ${ModScale.standard};
     color: ${Colors.Black.midGray};
 
     @media (max-width: ${maxWidth}) {

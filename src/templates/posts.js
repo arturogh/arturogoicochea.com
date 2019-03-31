@@ -1,8 +1,9 @@
 import React from 'react';
-import {Wrapper, Title} from './../components';
+import styled from 'styled-components';
+import {Wrapper, Title, TextStyle} from './../components';
 import {graphql} from 'gatsby';
 import Img from 'gatsby-image';
-import {TextStyle} from '../components/TextStyle';
+import {ModScale} from '../utils';
 
 const Template = ({data, pageContext}) => {
   const {markdownRemark} = data;
@@ -12,7 +13,9 @@ const Template = ({data, pageContext}) => {
   const html = markdownRemark.html;
   return (
     <Wrapper>
-      <Img fluid={markdownRemark.frontmatter.hero.childImageSharp.fluid} />
+      <ImgContainer>
+        <Img fluid={markdownRemark.frontmatter.hero.childImageSharp.fluid} />
+      </ImgContainer>
       <Title type="Post" tags={tags}>
         {title}
       </Title>
@@ -26,6 +29,10 @@ const Template = ({data, pageContext}) => {
     </Wrapper>
   );
 };
+
+const ImgContainer = styled.div`
+  margin: ${ModScale.large} 0 ${ModScale.standard};
+`;
 
 export const query = graphql`
   query($path: String!) {

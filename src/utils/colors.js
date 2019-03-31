@@ -1,7 +1,7 @@
 const Black = {
   nearBlack: '#111111',
   darkGray: '#333333',
-  midGray: '#555555',
+  midGray: '#444',
   gray: '#777777',
   moonGray: '#cccccc'
 };

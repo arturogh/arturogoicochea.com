@@ -9,7 +9,9 @@ import Img from 'gatsby-image';
 export const PostItem = ({title, excerpt, link, img}) => {
   return (
     <StyledPost>
-      <Img fluid={img} />
+      <Link to={link}>
+        <Img fluid={img} />
+      </Link>
       <TextWrapper>
         <Link to={link}>
           <ListingTitle>{title}</ListingTitle>
@@ -32,7 +34,11 @@ const StyledPost = styled.div`
     border-radius: 4px;
   }
 
-  &&& .gatsby-image-wrapper {
+  a {
+    display: block;
+  }
+
+  &&& > a {
     flex: 0 0 120px;
     margin-right: 12px;
 

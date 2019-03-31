@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {ModScale, font} from '../utils';
+import {ModScale, font, maxWidth} from '../utils';
 
 export const PageTitle = styled.h2`
   font-size: ${font.getFontData('homeTitle').size};

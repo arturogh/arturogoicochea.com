@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {graphql} from 'gatsby';
 import {Wrapper, PostItem, PageSubText, PageTitle} from './../../components';
-import {ModScale, Colors} from '../../utils';
+import {Colors} from '../../utils';
 
 const Posts = ({data}) => {
   const {edges} = data.allMarkdownRemark;
@@ -30,7 +30,6 @@ const Posts = ({data}) => {
 
 const LinkCollection = styled.div`
   a {
-    /* font-size: ${ModScale.S}; */
     color: ${Colors.Blue.blue};
     text-decoration: none;
     font-family: 'Inter UI', sans-serif;

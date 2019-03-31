@@ -12,7 +12,7 @@ export const Nav = () => {
       <StyledLinks>
         {navLinks.map((link, index) => (
           <li key={index}>
-            <Link to={link.url} activeStyle={{color: Colors.Blue.blue}}>
+            <Link to={link.url} activeStyle={{color: Colors.Black.nearBlack}}>
               {link.text}
             </Link>
           </li>
@@ -26,7 +26,7 @@ const StyledNav = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: ${ModScale.standard} 0;
+  margin: ${ModScale.standardPlus} 0 ${ModScale.standard};
 
   a {
     color: ${Colors.Blue.blue};
@@ -74,15 +74,14 @@ export const StyledLinks = styled.ul`
 
     @media (max-width: ${maxWidth}) {
     }
-
-    &:hover {
-      color: ${Colors.Blue.blue};
-    }
   }
 
   a {
     color: ${font.getFontData('nav').color};
     text-decoration: none;
+    &:hover {
+      color: ${Colors.Blue.darkBlue};
+    }
   }
 `;
 

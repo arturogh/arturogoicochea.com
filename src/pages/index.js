@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {graphql, Link} from 'gatsby';
 import {Wrapper, PostItem, PageTitle, PageSubText} from './../components';
-import {ModScale, maxWidth, font, Colors} from '../utils';
+import {ModScale, font, Colors} from '../utils';
 
 const HomePage = ({data}) => {
   const {edges} = data.allMarkdownRemark;
@@ -25,7 +25,7 @@ const HomePage = ({data}) => {
 
         {edges.map(edge => (
           <PostItem
-            link={edge.node.frontmatter.Link}
+            link={edge.node.frontmatter.path}
             title={edge.node.frontmatter.title}
             excerpt={edge.node.frontmatter.excerpt}
             img={edge.node.frontmatter.hero.childImageSharp.fluid}
@@ -52,21 +52,24 @@ const StyledHome = styled.div`
 `;
 
 const AboutText = styled.div`
-  min-height: 20vh;
-  line-height: 20vh;
+  min-height: 12vh;
+  line-height: 12vh;
   margin: ${ModScale.xLarge} 0;
   font-size: ${font.getFontData('homeText').size};
   font-weight: ${font.getFontData('homeText').weight};
+  text-align: center;
 
-  @media (max-width: ${maxWidth}) {
+  @media (max-width: 700px) {
+    text-align: left;
     min-height: 0;
+    max-width: 680px;
     margin: ${ModScale.large} 0;
     line-height: calc(${font.getFontData('homeText').size} * 2);
   }
 `;
 
 const HomeLink = styled.div`
-  margin-top: ${ModScale.medium};
+  margin-top: ${ModScale.standardPlus};
   a {
     text-decoration: none;
     font-family: 'Inter UI', sans-serif;

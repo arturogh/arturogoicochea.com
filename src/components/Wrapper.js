@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Nav} from './Nav';
-import {ModScale, maxWidth} from './../utils';
+import {maxWidth} from './../utils';
 import {Footer} from './Footer';
 
 export const Wrapper = props => {
@@ -20,20 +20,11 @@ const StyledWrapper = styled.div`
   padding: 0 20px;
 
   @media (max-width: ${maxWidth}) {
-  padding: 0 8px;
+    padding: 0 8px;
   }
 
   > div img {
     display: block;
-    border-radius: ${ModScale.Xs};
-  }
-
-  > .gatsby-image-wrapper,
-  div > .gatsby-image-wrapper {
-    /* margin-bottom: ${ModScale.M}; */
-
-    @media (max-width: ${maxWidth}) {
-      /* margin-bottom: ${ModScale.M}; */
-    }
+    border-radius: 4px;
   }
 `;

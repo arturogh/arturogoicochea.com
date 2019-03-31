@@ -12,6 +12,6 @@ export const ListingTitle = styled.h3`
   }
 
   &:hover {
-    color: ${Colors.Blue.blue};
+    color: ${Colors.Blue.darkBlue};
   }
 `;

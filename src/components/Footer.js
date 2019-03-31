@@ -63,17 +63,18 @@ const StyledFooter = styled.div`
 
   @media (max-width: ${maxWidth}) {
     flex-direction: column;
+    
   }
 `;
 
 const StyledFooterLinks = styled(StyledLinks)`
   display: flex;
   align-items: center;
-  padding-bottom: ${ModScale.standard};
+  padding-bottom: ${ModScale.medium};
 
-  /* @media (max-width: ${maxWidth}) {
-    padding-bottom: ${ModScale.M};
-  } */
+  @media (max-width: ${maxWidth}) {
+    justify-content: center;
+  }
 
   span {
     color: ${Colors.Black.gray};

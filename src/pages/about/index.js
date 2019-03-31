@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import {graphql} from 'gatsby';
-import {Wrapper, Title, TextStyle} from '../../components';
+import {Wrapper, TextStyle} from '../../components';
 import Img from 'gatsby-image';
-import {} from '../../components/TextStyle';
-import {ModScale} from '../../utils';
+import {ModScale, font, maxWidth} from '../../utils';
 
 const About = ({data}) => {
   return (
@@ -35,46 +34,36 @@ const About = ({data}) => {
           My workflow centers on simultaneously thinking end to end through the interactions and
           system I'm working on. My tool of choice is code, specifically JS, HTML and CSS.
         </p>
-        {/* <p>
-          Peruvian designer currently at Microsoft, prototyping the future of Office. In previous
-          design roles I worked on file creation, saving and collaboration, as well as an unreleased
-          mobile app.
-        </p>
-        <p>
-          Design is how I put together my love for learning with impacting the world positively. In
-          fact, I'm a self taught designer and coder, focused right now on leveling up JavaScript
-          and React. Am a strong advocate for prototyping from the start of a project, even
-          designing primarily with prototyping tools.
-        </p>
-        <h3>Even more about me:</h3>
-        <ul>
-          <li>Grew up in Lima, Peru, where I lived until 2015 when I moved to Seattle.</li>
-          <li>
-            Went to school for industrial engineering, interned in marketing, sales, buying and HR,
-            worked full Time as an HR analyst and a project manager.
-          </li>
-          <li>
-            Switched to a full time role as a designer, researcher and project manager at{' '}
-            <a href="https://laboratoria.la" target="_blank" rel="noopener noreferrer">
-              Laboratoria
-            </a>{' '}
-            in January 2015, when it still operated a web shop.
-          </li>
-        </ul> */}
       </TextStyle>
     </Wrapper>
   );
 };
 
 const StyledProfile = styled.div`
-  width: 40%;
-  margin: ${ModScale.large} 0 ${ModScale.small};
+  width: 24%;
+  margin: ${ModScale.large} 0 ${ModScale.xSmall};
+
+  @media (max-width: ${maxWidth}) {
+    width: 100%;
+    margin: ${ModScale.large} 0 ${ModScale.standard};
+  }
+
   img {
     border-radius: 4px;
   }
 `;
 
-const StyledAboutTitle = styled(Title)``;
+const StyledAboutTitle = styled.h1`
+  margin: ${ModScale.small} 0 ${ModScale.standard};
+  font-size: ${font.getFontData('h1').size};
+  font-weight: ${font.getFontData('h1').weight};
+  color: ${font.getFontData('h1').color};
+
+  @media (max-width: ${maxWidth}) {
+    font-size: ${font.getFontData('h1Mobile').size};
+    font-weight: ${font.getFontData('h1Mobile').weight};
+  }
+`;
 
 export default About;
 

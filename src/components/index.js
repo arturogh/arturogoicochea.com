@@ -7,5 +7,6 @@ export {Footer} from './Footer';
 export {ListingTitle} from './ListingTitle';
 export {ListingExcerpt} from './ListingExcerpt';
 export {PostItem} from './PostItem';
+export {ProjectItem} from './ProjectItem';
 export {PageTitle} from './PageTitle';
 export {PageSubText} from './PageSubText';
