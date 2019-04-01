@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Sizes, Colors, Spacing} from '../utils';
+import {Sizes, Colors, Spacing, mobileWidth} from '../utils';
 import {Link} from 'gatsby';
 
 export const Post = props => {
@@ -16,6 +16,10 @@ export const Post = props => {
 
 const StyledPost = styled.div`
   margin: 0 0 ${Spacing.medium};
+
+  @media (max-width: ${mobileWidth}) {
+    margin: 0 0 ${Spacing.small};
+  }
 `;
 
 const Title = styled.h3`
@@ -23,6 +27,11 @@ const Title = styled.h3`
   color: ${Colors.blue};
   padding: 0;
   margin: 0 0 ${Spacing.xSmall};
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `;
 
 const Excerpt = styled.p`

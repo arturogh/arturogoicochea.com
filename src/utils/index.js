@@ -1,1 +1,1 @@
-export {Colors, Weights, Sizes, Spacing} from './variables';
+export {Colors, Weights, Sizes, Spacing, useInter, mobileWidth} from './variables';

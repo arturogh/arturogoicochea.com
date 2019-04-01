@@ -27,3 +27,7 @@ export const Spacing = {
   xLarge: '8rem',
   xxLarge: '12rem'
 };
+
+export const useInter = `'Inter Var', 'Inter'`;
+
+export const mobileWidth = '800px';
