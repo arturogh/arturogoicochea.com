@@ -13,7 +13,3 @@ Other packages and web-things I use here:
 - Typography.js
 
 Trying to use as few styles for fonts as possible.
-
-- Weights: standard, bold
-- Color: near black, dark grey, grey
-- size: 2 rem, 1 rem
