@@ -41,8 +41,6 @@ const About = styled.div`
 
   @media (max-width: ${mobileWidth}) {
     margin: ${Spacing.small} 0 ${Spacing.medium};
-    padding-bottom: ${Spacing.small};
-    border-bottom: 1px solid ${Colors.gray};
   }
 
   .gatsby-image-wrapper {

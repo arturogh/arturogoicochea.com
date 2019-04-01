@@ -2,6 +2,15 @@ module.exports = {
   plugins: [
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-remark-images`,
+      options: {
+        maxWidth: 800,
+        linkImagesToOriginal: true,
+        sizeByPixelDensity: true,
+        showCaptions: true
+      }
+    },
     `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-typography`,
@@ -20,7 +29,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/blog`,
+        path: `${__dirname}/src/pages/blog`,
         name: 'markdown-pages'
       }
     },

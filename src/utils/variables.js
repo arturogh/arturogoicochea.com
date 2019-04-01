@@ -2,7 +2,9 @@ export const Colors = {
   nearBlack: '#111111',
   darkGray: '#333333',
   gray: '#555555',
-  blue: '#357EDD'
+  lightGray: '#F4F4F4',
+  blue: '#357EDD',
+  lightBlue: '#CDECFF'
 };
 
 export const Weights = {
@@ -28,6 +30,6 @@ export const Spacing = {
   xxLarge: '12rem'
 };
 
-export const useInter = `'Inter Var', 'Inter'`;
+export const useInter = `'Inter Var', 'Inter', sans-serif`;
 
 export const mobileWidth = '800px';
