@@ -10,7 +10,7 @@ export const Colors = {
 export const Weights = {
   regular: 400,
   subText: 450,
-  semiBold: 600,
+  semiBold: 700,
   bold: 800
 };
 

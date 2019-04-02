@@ -18,7 +18,7 @@ I write this as a parent to a 3 year old son who ~~uses~~ used to use Netflix ~~
 
 From an engagement perspective, these apps are flawless: nice design, you see the content straight away, just swipe until you see something that catches your eye. Your kid will be watching something in no time. And that’s the start of the problem.
 
-![Netflix (Kids section)](images/netflix-kids.png)
+![Netflix (Kids section)](/assets/netflix-kids.png)
 
 The lesson this teaches is “let’s start watching **something** (anything) and spend your time doing the easiest thing possible”. This habit of mindless consumption is dangerous, and everyday use will only enforce that.
 

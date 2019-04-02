@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {graphql, Link} from 'gatsby';
 import {Wrapper} from '../components/';
 import {ChevronLeft} from 'react-feather';
-import {Colors, Spacing, mobileWidth, useInter, Sizes} from '../utils';
+import {Colors, Spacing, mobileWidth, useInter, Sizes, Weights} from '../utils';
 
 export default function Template({data}) {
   const {markdownRemark} = data;
@@ -18,6 +18,7 @@ export default function Template({data}) {
           </Back>
           <Title>{frontmatter.title}</Title>
           <Meta>
+            <span> by </span>
             <Date>{frontmatter.date}</Date>
             <Author to="/">Arturo Goicochea</Author>
           </Meta>
@@ -50,7 +51,7 @@ const Back = styled(Link)`
   margin: ${Spacing.small} 0 ${Spacing.medium};
 
   @media (max-width: ${mobileWidth}) {
-    margin: ${Spacing.small} 0 ${Spacing.medium};
+    margin: ${Spacing.xSmall} 0 ${Spacing.small};
   }
 
   &:hover {
@@ -68,8 +69,15 @@ const Header = styled.div`
 `;
 
 const Title = styled.h1`
-  margin: 0 0 ${Spacing.xSmall};
+  font-size: ${Sizes.large};
+  font-weight: ${Weights.bold};
+  margin: 0 0 ${Spacing.small};
   padding: 0;
+
+  @media (max-width: ${mobileWidth}) {
+    font-size: ${Sizes.medium};
+    font-weight: ${Weights.semiBold};
+  }
 `;
 
 const Date = styled.span`

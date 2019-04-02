@@ -18,7 +18,7 @@ Something that doesn’t take much time though (and can make a big difference) i
 
 ## 1. Before diving in...
 
-![Looking at a computer, notebook on lap](./1.jpeg)
+![Looking at a computer, notebook on lap](/assets/1.jpeg)
 
 …my advice is to get these things right:
 
@@ -28,7 +28,7 @@ Something that doesn’t take much time though (and can make a big difference) i
 
 ## 2. Plan your message
 
-![Taking notes on a notebook](./2.jpeg)
+![Taking notes on a notebook](/assets/2.jpeg)
 
 **This is what you want to tell them**: Who are you? What are your strengths, what do you like? What’s your story?
 
@@ -40,7 +40,7 @@ And a pro-tip from [Stephen N. Crowley](https://twitter.com/stephenncrowley): �
 
 ## 3. Plan the structure of your message (the slides!)
 
-![Even more note taking](./3.jpeg)
+![Even more note taking](/assets/3.jpeg)
 
 Nothing conveys a message better than…a story! And what better way to acomplish this than to storytell. A great resource I always recommend is Nancy Duarte’s Ted talk: [The secret structure of great talks](https://www.ted.com/talks/nancy_duarte_the_secret_structure_of_great_talks).
 
@@ -75,7 +75,7 @@ When thinking about each project, also keep these tips in mind:
 
 ## 4. Make your slides
 
-![Working on a laptop](./4.jpeg)
+![Working on a laptop](/assets/4.jpeg)
 
 With the message and the structure clear, all that’s left is to build your slides. When you do, make sure they’re helping convey your message, not distract your audience nor taking the spotlight from you. Here are a few tips.
 
@@ -86,7 +86,7 @@ With the message and the structure clear, all that’s left is to build your sli
 
 ## 5. Practice, practice, practice
 
-![2 people looking at a laptop, discussing](./5.jpeg)
+![2 people looking at a laptop, discussing](/assets/5.jpeg)
 
 Presenting is one of those skills you need to practice to improve. When presenting, you want focus to be on your message when speaking, not you. That’s why you want everything to go as smooth as possible. No mistakes, perfect transitions from point to point, and no stops.
 
