@@ -1,12 +1,15 @@
-# gatsby-starter-hello-world
-Starter with the bare essentials needed for a [Gatsby](https://www.gatsbyjs.org/) site.
+# arturogoicochea.com
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-```
-gatsby new gatsby-site https://github.com/gatsbyjs/gatsby-starter-hello-world
-```
+My home on the web, where I post blog posts, projects and such.
 
-Or [view the live demo here](https://gatsby-starter-hello-world-demo.netlify.com/).
+For 2019 I did a first redesign which asked too much of my time. This 2019 edition, take 2, is much more streamlined. It will only have text posts with no featured images. No 'projects' as a separate kind of post. And Netlify CMS as a CMS (for easy posting.) Finally, I will leverage CodeSandbox to easily and quickly spin up new mini projects.
 
-## Running in development
-`gatsby develop`
+Other packages and web-things I use here:
+
+- Gatsby
+- Styled-components
+- Inter
+- Crimson text
+- Typography.js
+
+Trying to use as few styles for fonts as possible.

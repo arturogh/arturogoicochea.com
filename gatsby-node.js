@@ -1,67 +1,36 @@
 const path = require('path');
 
-exports.createPages = ({graphql, actions}) => {
+exports.createPages = ({actions, graphql}) => {
   const {createPage} = actions;
 
-  return new Promise((resolve, reject) => {
-    const postTemplate = path.resolve('src/templates/posts.js');
-    const projectTemplate = path.resolve('src/templates/projects.js');
+  const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`);
 
-    resolve(
-      graphql(`
-        query {
-          allMarkdownRemark(sort: {order: ASC, fields: [frontmatter___date]}) {
-            edges {
-              node {
-                frontmatter {
-                  path
-                  type
-                  featuredImage
-                }
-              }
+  return graphql(`
+    {
+      allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}, limit: 1000) {
+        edges {
+          node {
+            frontmatter {
+              path
+              excerpt
             }
           }
         }
-      `).then(result => {
-        const posts = result.data.allMarkdownRemark.edges.filter(
-          post => post.node.frontmatter.type === 'post'
-        );
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      return Promise.reject(result.errors);
+    }
 
-        posts.forEach(({node}, index) => {
-          const path = node.frontmatter.path;
-          createPage({
-            path,
-            component: postTemplate,
-            context: {
-              image: node.frontmatter.featuredImage,
-              prev: index === 0 ? null : posts[index - 1].node,
-              next: index === posts.length - 1 ? null : posts[index + 1].node
-            }
-          });
-
-          resolve();
-        });
-
-        const projects = result.data.allMarkdownRemark.edges.filter(
-          project => project.node.frontmatter.type === 'project'
-        );
-
-        projects.forEach(({node}, index) => {
-          const path = node.frontmatter.path;
-          console.log(path);
-          createPage({
-            path,
-            component: projectTemplate,
-            context: {
-              image: node.frontmatter.featuredImage,
-              prev: index === 0 ? null : projects[index - 1].node,
-              next: index === projects.length - 1 ? null : projects[index + 1].node
-            }
-          });
-
-          resolve();
-        });
-      })
-    );
+    result.data.allMarkdownRemark.edges.forEach(({node}) => {
+      createPage({
+        path: node.frontmatter.path,
+        component: blogPostTemplate,
+        context: {
+          slug: node.frontmatter.path
+        }
+      });
+    });
   });
 };

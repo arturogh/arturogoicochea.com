@@ -1,47 +1,39 @@
 module.exports = {
-  siteMetadata: {
-    title: 'Arturo Goicochea',
-    description: 'Arturo is a designer who codes. Finde my projects, posts, about here.'
-  },
   plugins: [
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 680,
-              showCaptions: true
-            }
-          }
-        ]
-      }
-    },
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-sharp`,
-
-    `gatsby-plugin-styled-components`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-remark-images`,
       options: {
-        name: `pages`,
-        path: `${__dirname}/src/pages`
+        maxWidth: 800,
+        linkImagesToOriginal: true,
+        sizeByPixelDensity: true,
+        showCaptions: true
       }
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/static/assets/images`
-      }
-    },
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
         omitGoogleFont: true
       }
-    }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/static/assets/`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages/blog`,
+        name: 'markdown-pages'
+      }
+    },
+    `gatsby-plugin-styled-components`,
+    `gatsby-transformer-sharp`
   ]
 };

@@ -1,4 +1,1 @@
-export {maxWidth} from './spacing';
-export {Colors} from './colors';
-export {ModScale} from './modScale.js';
-export {font} from './font';
+export {Colors, Weights, Sizes, Spacing, useInter, mobileWidth} from './variables';

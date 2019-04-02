@@ -1,92 +1,109 @@
 import React from 'react';
+import {Wrapper, Post} from '../components';
 import styled from 'styled-components';
-import {graphql, Link} from 'gatsby';
-import {Wrapper, PostItem, PageTitle, PageSubText} from './../components';
-import {ModScale, maxWidth, font, Colors} from '../utils';
+import {Sizes, Colors, Weights, Spacing, useInter, mobileWidth} from './../utils';
+import Img from 'gatsby-image';
 
-const HomePage = ({data}) => {
+export default ({data}) => {
   const {edges} = data.allMarkdownRemark;
-
+  console.log(edges);
   return (
     <Wrapper>
-      <StyledHome>
+      <About>
         {/* About */}
-        <AboutText>
-          <strong>Designer</strong> @ Microsoft Office prototyping team. Code is my friend{' '}
+        <Img fluid={data.file.childImageSharp.fluid} />
+        <AboutTitle>Arturo Goicochea</AboutTitle>
+        <AboutSubText>
+          <span>Designer</span> at Microsoft +{' '}
           <span role="img" aria-label="heart emoji">
-            ❤️
+            ❤️{' '}
           </span>
-          ️.
-        </AboutText>
-        {/* Posts */}
-        <PageTitle>Posts:</PageTitle>
+          code
+        </AboutSubText>
+      </About>
 
-        <PageSubText>Thoughts on tech, teamwork, society and more</PageSubText>
-
+      {/* Posts */}
+      <Posts>
         {edges.map(edge => (
-          <PostItem
-            link={edge.node.frontmatter.Link}
+          <Post
+            link={edge.node.frontmatter.path}
             title={edge.node.frontmatter.title}
             excerpt={edge.node.frontmatter.excerpt}
-            img={edge.node.frontmatter.hero.childImageSharp.fluid}
           />
         ))}
-        <HomeLink>
-          <Link to="/posts">See all posts</Link>
-        </HomeLink>
-
-        {/* Projects */}
-        <PageTitle>Projects:</PageTitle>
-        <PageSubText>Freebound explorations, for fun or to learn something new</PageSubText>
-        <HomeLink>
-          <Link to="/projects">See all projects</Link>
-        </HomeLink>
-      </StyledHome>
+      </Posts>
     </Wrapper>
   );
 };
 
-const StyledHome = styled.div`
-  font-family: 'inter ui', sans-serif;
-  padding-top: 1px;
-`;
+const About = styled.div`
+  margin: ${Spacing.xLarge} 0 ${Spacing.large};
 
-const AboutText = styled.div`
-  min-height: 20vh;
-  line-height: 20vh;
-  margin: ${ModScale.xLarge} 0;
-  font-size: ${font.getFontData('homeText').size};
-  font-weight: ${font.getFontData('homeText').weight};
-
-  @media (max-width: ${maxWidth}) {
-    min-height: 0;
-    margin: ${ModScale.large} 0;
-    line-height: calc(${font.getFontData('homeText').size} * 2);
+  @media (max-width: ${mobileWidth}) {
+    margin: ${Spacing.small} 0 ${Spacing.medium};
   }
-`;
 
-const HomeLink = styled.div`
-  margin-top: ${ModScale.medium};
-  a {
-    text-decoration: none;
-    font-family: 'Inter UI', sans-serif;
-    font-size: ${font.getFontData('homeLink').size};
-    font-weight: ${font.getFontData('homeLink').weight};
-    color: ${Colors.Blue.blue};
+  .gatsby-image-wrapper {
+    width: 16%;
+    border-radius: 8%;
+    margin-bottom: ${Spacing.small};
 
-    &:hover {
-      color: ${Colors.Blue.darkBlue};
+    @media (max-width: ${mobileWidth}) {
+      margin-bottom: ${Spacing.xSmall};
     }
   }
 `;
 
+const AboutTitle = styled.h1`
+  margin: 0;
+  padding: 0 0 ${Spacing.xSmall};
+  font-size: ${Sizes.large};
+  color: ${Colors.nearBlack};
+  font-weight: ${Weights.bold};
+
+  @media (max-width: ${mobileWidth}) {
+    font-size: ${Sizes.medium};
+  }
+`;
+
+const AboutSubText = styled.p`
+  font-family: ${useInter};
+  margin: 0;
+  padding: 0;
+  font-size: ${Sizes.medium};
+  color: ${Colors.gray};
+  font-weight: ${Weights.subText};
+
+  @media (max-width: ${mobileWidth}) {
+    font-size: ${Sizes.standard};
+  }
+
+  span {
+    color: ${Colors.nearBlack};
+  }
+`;
+
+const Posts = styled.div`
+  margin: 0 0 ${Spacing.medium};
+`;
+
 export const query = graphql`
   query {
-    allMarkdownRemark(
-      limit: 2
-      sort: {order: DESC, fields: [frontmatter___date]}
-      filter: {frontmatter: {type: {eq: "post"}}}
-    ) {
+    file(relativePath: {eq: "me.jpg"}) {
+      childImageSharp {
+        fluid {
+          aspectRatio
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          sizes
+          originalImg
+          originalName
+        }
+      }
+    }
+    allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
       edges {
         node {
           frontmatter {
@@ -94,25 +111,9 @@ export const query = graphql`
             path
             date
             excerpt
-            hero {
-              childImageSharp {
-                fluid {
-                  aspectRatio
-                  src
-                  srcSet
-                  srcWebp
-                  srcSetWebp
-                  sizes
-                  originalImg
-                  originalName
-                }
-              }
-            }
           }
         }
       }
     }
   }
 `;
-
-export default HomePage;
