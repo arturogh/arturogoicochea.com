@@ -1,19 +1,19 @@
-import Typography from 'typography';
+import Typography from "typography"
 
 const typography = new Typography({
-  baseFontSize: '20px',
-  baseLineHeight: 1.6,
-  bodyWeight: 400,
+  baseFontSize: "20px",
+  baseLineHeight: 1.666,
   headerFontFamily: [
-    'Inter Var',
-    'Inter',
-    'Helvetica Neue',
-    'Segoe UI',
-    'Helvetica',
-    'Arial',
-    'sans-serif'
+    "Inter UI",
+    "Helvetica Neue",
+    "Segoe UI",
+    "Helvetica",
+    "Arial",
+    "sans-serif",
   ],
-  bodyFontFamily: ['Crimson Text', 'serif']
-});
+  bodyFontFamily: ["Source Serif", "serif"],
+})
 
-export default typography;
+// Export helper functions
+export const { scale, rhythm, options } = typography
+export default typography
